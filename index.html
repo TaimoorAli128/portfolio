@@ -10,11 +10,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#08080c; --ink-2:#0c0c13; --surface:#101018; --surface-2:#17171f;
-    --line:#1e1e2a; --line-2:#2c2c3c;
-    --text:#f2f2f6; --text-dim:#9a9aad; --text-faint:#60607090; --text-faint:#5f5f72;
-    --violet:#a855f7; --violet-2:#8b5cf6; --blue:#6ea8ff;
-    --grad:linear-gradient(120deg,#a855f7,#6ea8ff);
+    --ink:#0a0f1a; --ink-2:#0e1422; --surface:#131b2b; --surface-2:#1b2537;
+    --line:#26324a; --line-2:#36456180;
+    --text:#e9eef7; --text-dim:#96a3b8; --text-faint:#647388;
+    --violet:#3b82f6; --violet-2:#2563eb; --blue:#60a5fa;
+    --grad:linear-gradient(120deg,#3b82f6,#60a5fa);
     --maxw:1180px; --ease:cubic-bezier(.22,.61,.36,1);
     --fd:'Sora',system-ui,sans-serif; --fb:'Inter',system-ui,sans-serif; --fm:'JetBrains Mono',ui-monospace,monospace;
   }
@@ -24,7 +24,7 @@
   a{color:inherit;text-decoration:none}
   ul{list-style:none}
   canvas{display:block}
-  ::selection{background:rgba(168,85,247,.32);color:#fff}
+  ::selection{background:rgba(59,130,246,.32);color:#fff}
   :focus-visible{outline:2px solid var(--violet);outline-offset:3px;border-radius:4px}
 
   body::before{content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.03;mix-blend-mode:overlay;
@@ -43,11 +43,11 @@
   header.nav.scrolled{background:rgba(8,8,12,.72);backdrop-filter:blur(14px) saturate(150%);-webkit-backdrop-filter:blur(14px) saturate(150%);border-bottom:1px solid var(--line)}
   .nav-in{display:flex;align-items:center;justify-content:space-between;height:72px}
   .brand{display:flex;align-items:center;gap:12px}
-  .brand .mark{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;background:var(--grad);color:#0a0612;font-family:var(--fd);font-weight:800;font-size:1rem;box-shadow:0 6px 22px rgba(168,85,247,.3)}
+  .brand .mark{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;background:var(--grad);color:#0a0612;font-family:var(--fd);font-weight:800;font-size:1rem;box-shadow:0 6px 22px rgba(59,130,246,.3)}
   .brand .nm{font-family:var(--fd);font-weight:600;font-size:.95rem;letter-spacing:-.01em}
   .brand .st{font-family:var(--fm);font-size:.66rem;color:var(--text-faint);display:flex;align-items:center;gap:6px}
-  .dot{width:7px;height:7px;border-radius:50%;background:var(--violet);box-shadow:0 0 0 0 rgba(168,85,247,.6);animation:pulse 2.4s infinite}
-  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(168,85,247,.55)}70%{box-shadow:0 0 0 7px rgba(168,85,247,0)}100%{box-shadow:0 0 0 0 rgba(168,85,247,0)}}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--violet);box-shadow:0 0 0 0 rgba(59,130,246,.6);animation:pulse 2.4s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(59,130,246,.55)}70%{box-shadow:0 0 0 7px rgba(59,130,246,0)}100%{box-shadow:0 0 0 0 rgba(59,130,246,0)}}
   nav.links{display:flex;align-items:center;gap:4px}
   nav.links a.lk{font-family:var(--fm);font-size:.8rem;color:var(--text-dim);padding:9px 13px;border-radius:8px;transition:color .2s,background .2s}
   nav.links a.lk:hover{color:var(--text);background:var(--surface)}
@@ -60,7 +60,7 @@
   /* HERO */
   .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
   .hero-spot{position:absolute;z-index:0;top:-20%;left:50%;transform:translateX(-50%);width:120%;height:70%;pointer-events:none;
-    background:radial-gradient(ellipse 50% 60% at 50% 0%,rgba(168,85,247,.16),rgba(110,168,255,.05) 45%,transparent 70%);filter:blur(10px)}
+    background:radial-gradient(ellipse 50% 60% at 50% 0%,rgba(59,130,246,.16),rgba(110,168,255,.05) 45%,transparent 70%);filter:blur(10px)}
   .hero-grid{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.4;will-change:transform;transition:transform .3s ease-out;
     background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:70px 70px;
     mask-image:radial-gradient(circle at 50% 45%,#000,transparent 75%);-webkit-mask-image:radial-gradient(circle at 50% 45%,#000,transparent 75%)}
@@ -81,8 +81,8 @@
   .h-lede{max-width:46ch;color:var(--text-dim);font-size:1.08rem;margin:20px 0 34px;opacity:0;animation:fu .7s var(--ease) 1.05s forwards}
   .h-cta{display:flex;flex-wrap:wrap;gap:14px;opacity:0;animation:fu .7s var(--ease) 1.2s forwards}
   .btn{font-family:var(--fm);font-size:.88rem;padding:14px 24px;border-radius:11px;cursor:pointer;display:inline-flex;align-items:center;gap:10px;transition:transform .2s var(--ease),box-shadow .25s,background .25s,border-color .25s}
-  .btn.pr{background:var(--grad);color:#0a0612;font-weight:600;box-shadow:0 10px 30px rgba(168,85,247,.28)}
-  .btn.pr:hover{transform:translateY(-2px);box-shadow:0 16px 42px rgba(168,85,247,.42)}
+  .btn.pr{background:var(--grad);color:#0a0612;font-weight:600;box-shadow:0 10px 30px rgba(59,130,246,.28)}
+  .btn.pr:hover{transform:translateY(-2px);box-shadow:0 16px 42px rgba(59,130,246,.42)}
   .btn.gh{background:transparent;color:var(--text);border:1px solid var(--line-2)}
   .btn.gh:hover{transform:translateY(-2px);border-color:var(--violet-2);background:var(--surface)}
   .btn .aw{transition:transform .2s var(--ease)}
@@ -110,9 +110,14 @@
   .stat .lb{font-family:var(--fm);font-size:.72rem;color:var(--text-faint);text-transform:uppercase;letter-spacing:.08em;margin-top:10px}
 
   /* WHAT I DO */
-  .do-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-  .do-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px 24px;position:relative;overflow:hidden;transition:transform .35s var(--ease),border-color .35s,background .35s;will-change:transform}
-  .do-card::after{content:"";position:absolute;inset:0;border-radius:16px;opacity:0;transition:opacity .4s;pointer-events:none;background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(168,85,247,.12),transparent 55%)}
+  .do-grid{display:flex;gap:16px;overflow-x:auto;overflow-y:hidden;padding:4px 2px 20px;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--line-2) transparent}
+  .do-grid::-webkit-scrollbar{height:8px}
+  .do-grid::-webkit-scrollbar-track{background:var(--surface-2);border-radius:8px}
+  .do-grid::-webkit-scrollbar-thumb{background:var(--line-2);border-radius:8px}
+  .do-grid::-webkit-scrollbar-thumb:hover{background:var(--violet)}
+  .do-hint{font-family:var(--fm);font-size:.72rem;color:var(--text-faint);margin-top:4px;display:flex;align-items:center;gap:8px}
+  .do-card{flex:0 0 300px;scroll-snap-align:start;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px 24px;position:relative;overflow:hidden;transition:transform .35s var(--ease),border-color .35s,background .35s;will-change:transform}
+  .do-card::after{content:"";position:absolute;inset:0;border-radius:16px;opacity:0;transition:opacity .4s;pointer-events:none;background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(59,130,246,.12),transparent 55%)}
   .do-card:hover{border-color:var(--line-2);background:var(--surface-2)}
   .do-card:hover::after{opacity:1}
   .do-ic{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:var(--ink-2);border:1px solid var(--line-2);color:var(--violet);margin-bottom:18px;position:relative;z-index:1}
@@ -125,7 +130,7 @@
   .job{position:relative;padding:0 0 46px}
   .job:last-child{padding-bottom:0}
   .job::before{content:"";position:absolute;left:-30px;top:6px;width:15px;height:15px;border-radius:50%;background:var(--ink);border:2px solid var(--violet-2);box-shadow:0 0 0 4px var(--ink)}
-  .job.cur::before{background:var(--violet);border-color:var(--violet);box-shadow:0 0 0 4px var(--ink),0 0 16px rgba(168,85,247,.6)}
+  .job.cur::before{background:var(--violet);border-color:var(--violet);box-shadow:0 0 0 4px var(--ink),0 0 16px rgba(59,130,246,.6)}
   .j-meta{display:flex;flex-wrap:wrap;align-items:baseline;gap:12px;margin-bottom:8px}
   .j-role{font-family:var(--fd);font-weight:600;font-size:1.2rem;letter-spacing:-.01em}
   .j-co{color:var(--violet);font-weight:500}
@@ -142,9 +147,9 @@
   .work::before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:var(--grad);transform:scaleY(0);transform-origin:top;transition:transform .5s var(--ease);z-index:3}
   .work:hover{border-color:var(--line-2);background:var(--surface-2)}
   .work:hover::before{transform:scaleY(1)}
-  .work::after{content:"";position:absolute;inset:0;border-radius:18px;opacity:0;transition:opacity .4s;pointer-events:none;background:radial-gradient(520px circle at var(--mx,50%) var(--my,50%),rgba(168,85,247,.1),transparent 55%);z-index:2}
+  .work::after{content:"";position:absolute;inset:0;border-radius:18px;opacity:0;transition:opacity .4s;pointer-events:none;background:radial-gradient(520px circle at var(--mx,50%) var(--my,50%),rgba(59,130,246,.1),transparent 55%);z-index:2}
   .work:hover::after{opacity:1}
-  .w-viz{position:relative;z-index:1;border:1px solid var(--line);border-radius:14px;background:radial-gradient(circle at 50% 22%,rgba(168,85,247,.09),transparent 65%),var(--ink-2);overflow:hidden;display:flex;align-items:center;justify-content:center;padding:16px;transition:border-color .4s}
+  .w-viz{position:relative;z-index:1;border:1px solid var(--line);border-radius:14px;background:radial-gradient(circle at 50% 22%,rgba(59,130,246,.09),transparent 65%),var(--ink-2);overflow:hidden;display:flex;align-items:center;justify-content:center;padding:16px;transition:border-color .4s}
   .work:hover .w-viz{border-color:var(--line-2)}
   .w-viz svg{width:100%;height:auto;display:block}
   .w-body{position:relative;z-index:1;display:flex;flex-direction:column;justify-content:center}
@@ -156,7 +161,7 @@
 
   /* TECH STACK (3D) */
   .tech{position:relative;overflow:hidden}
-  .tech-stage{position:relative;height:600px;border:1px solid var(--line);border-radius:22px;background:radial-gradient(circle at 50% 40%,rgba(168,85,247,.06),transparent 60%),var(--ink-2);overflow:hidden}
+  .tech-stage{position:relative;height:600px;border:1px solid var(--line);border-radius:22px;background:radial-gradient(circle at 50% 40%,rgba(59,130,246,.06),transparent 60%),var(--ink-2);overflow:hidden}
   #techCanvas{width:100%;height:100%}
   .tech-head{position:absolute;z-index:2;top:30px;left:32px;right:32px;pointer-events:none}
   .tech-hint{position:absolute;z-index:2;top:34px;right:32px;font-family:var(--fm);font-size:.7rem;color:var(--text-faint);pointer-events:none}
@@ -195,7 +200,7 @@
     .hero-in{grid-template-columns:1fr;gap:10px}
     .hero-3d{height:360px;order:2}
     .ab{grid-template-columns:1fr;gap:44px}
-    .do-grid{grid-template-columns:1fr 1fr}
+    .do-card{flex-basis:280px}
     .tech-cats{grid-template-columns:1fr 1fr}
   }
   @media (max-width:760px){
@@ -213,7 +218,7 @@
     .mtg.on span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
   }
   @media (max-width:560px){
-    .do-grid{grid-template-columns:1fr}
+    .do-card{flex:0 0 82%}
     .wrap{padding:0 20px}
     .j-date{margin-left:0}
     .tech-cats{grid-template-columns:1fr}
@@ -304,7 +309,8 @@
     <div class="s-head reveal">
       <div class="eyebrow">02 · what i do</div>
       <h2 class="s-title">Services</h2>
-      <p class="s-sub">Four things I own end to end — continuous integration and delivery first, plus the infrastructure, security, and observability around it.</p>
+      <p class="s-sub">What I work on across the delivery lifecycle — from writing the pipeline to running the servers underneath it.</p>
+      <div class="do-hint">drag / scroll to see all <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
     </div>
     <div class="do-grid">
       <div class="do-card reveal">
@@ -313,19 +319,39 @@
         <p>Design end-to-end pipelines with Jenkins, GitHub Actions, GitLab CI, and CodePipeline — automated build, test, and deploy so every commit ships to production safely.</p>
       </div>
       <div class="do-card reveal">
-        <div class="do-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"/><circle cx="7" cy="7" r="0"/></svg></div>
-        <h3>Cloud &amp; Infrastructure as Code</h3>
-        <p>Provision scalable, highly available infrastructure on AWS, Azure, and GCP with Terraform, CloudFormation, and Ansible — repeatable and version-controlled.</p>
+        <div class="do-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M12 12l9-5M12 12v10M12 12L3 7"/></svg></div>
+        <h3>Containerization &amp; Orchestration</h3>
+        <p>Containerize services with Docker and run them on Kubernetes, ECS, and Fargate — Helm charts, rolling deploys, and self-healing workloads.</p>
+      </div>
+      <div class="do-card reveal">
+        <div class="do-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 18a4 4 0 010-8 5 5 0 019.6-1.5A3.5 3.5 0 0117 18H7z"/><path d="M12 15v-5m0 0l-2 2m2-2l2 2"/></svg></div>
+        <h3>Cloud Architecture &amp; Migration</h3>
+        <p>Architect and migrate workloads across AWS, Azure, and GCP — scalable, fault-tolerant designs and moving apps to the cloud with low-downtime cutovers.</p>
+      </div>
+      <div class="do-card reveal">
+        <div class="do-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 9l-3 3 3 3m8-6l3 3-3 3M13 5l-2 14"/></svg></div>
+        <h3>Infrastructure as Code</h3>
+        <p>Provision repeatable, version-controlled infrastructure with Terraform, CloudFormation, and Ansible — no manual console clicking.</p>
       </div>
       <div class="do-card reveal">
         <div class="do-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h4l2 6 4-14 2 8h6"/></svg></div>
-        <h3>Observability</h3>
-        <p>Full-stack monitoring with Prometheus, Grafana, New Relic, and CloudWatch — proactive alerting before users feel issues.</p>
+        <h3>Observability &amp; Monitoring</h3>
+        <p>Full-stack monitoring with Prometheus, Grafana, New Relic, and the ELK Stack — dashboards and proactive alerting before users feel issues.</p>
       </div>
       <div class="do-card reveal">
-        <div class="do-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/></svg></div>
-        <h3>Cloud Security</h3>
-        <p>Harden environments at the org level — Security Hub, GuardDuty, Inspector, Macie, Vault, and KMS encryption.</p>
+        <div class="do-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Cloud Security &amp; Compliance</h3>
+        <p>Harden environments at the org level — Security Hub, GuardDuty, Inspector, Macie, Vault, and KMS — plus SOC 2 controls and evidencing.</p>
+      </div>
+      <div class="do-card reveal">
+        <div class="do-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 13a2 2 0 100-4 2 2 0 000 4z"/><path d="M12 9V6M4.9 19a9 9 0 1114.2 0"/></svg></div>
+        <h3>Cost &amp; Performance Optimization</h3>
+        <p>Right-size compute, tune autoscaling, and cut cloud spend — improving performance and reliability while lowering the bill.</p>
+      </div>
+      <div class="do-card reveal">
+        <div class="do-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="7" rx="1"/><rect x="4" y="13" width="16" height="7" rx="1"/><path d="M8 7.5h.01M8 16.5h.01"/></svg></div>
+        <h3>On-Prem Server Management</h3>
+        <p>Administer and maintain Linux servers and services — Nginx, Tomcat, patching, backups, and hardening across on-prem and hybrid environments.</p>
       </div>
     </div>
   </div>
@@ -380,29 +406,29 @@
     <div class="s-head reveal">
       <div class="eyebrow">04 · selected work</div>
       <h2 class="s-title">My Work</h2>
-      <p class="s-sub">Projects where I owned the infrastructure end to end — migration, observability, and security.</p>
+      <p class="s-sub">Initiatives I've contributed to as part of the team — cloud migration and CI/CD, observability, security, and SOC 2 compliance.</p>
     </div>
     <div class="work-list">
       <article class="work reveal">
         <div class="w-viz">
           <svg viewBox="0 0 380 230" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Railway to AWS migration with CI/CD pipeline">
-            <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#a855f7"/><stop offset="1" stop-color="#6ea8ff"/></linearGradient></defs>
-            <rect x="18" y="28" width="96" height="48" rx="8" fill="#15151f" stroke="#2c2c3c"/>
-            <text x="66" y="56" fill="#9a9aad" font-family="monospace" font-size="13" text-anchor="middle">Railway</text>
+            <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3b82f6"/><stop offset="1" stop-color="#60a5fa"/></linearGradient></defs>
+            <rect x="18" y="28" width="96" height="48" rx="8" fill="#0e1422" stroke="#26324a"/>
+            <text x="66" y="56" fill="#96a3b8" font-family="monospace" font-size="13" text-anchor="middle">Railway</text>
             <line x1="120" y1="52" x2="250" y2="52" stroke="url(#g1)" stroke-width="2" stroke-dasharray="4 4"/>
             <path d="M245 47 L256 52 L245 57" fill="none" stroke="url(#g1)" stroke-width="2"/>
-            <rect x="258" y="24" width="104" height="56" rx="10" fill="#15151f" stroke="#a855f7"/>
+            <rect x="258" y="24" width="104" height="56" rx="10" fill="#0e1422" stroke="#3b82f6"/>
             <text x="310" y="42" fill="#fff" font-family="monospace" font-size="12" text-anchor="middle">AWS</text>
-            <rect x="270" y="50" width="18" height="20" rx="3" fill="#241f3a" stroke="#7d7cf2"/>
-            <rect x="294" y="50" width="18" height="20" rx="3" fill="#241f3a" stroke="#7d7cf2"/>
-            <rect x="318" y="50" width="18" height="20" rx="3" fill="#241f3a" stroke="#7d7cf2"/>
-            <text x="18" y="124" fill="#5f5f72" font-family="monospace" font-size="11">CI/CD PIPELINE</text>
+            <rect x="270" y="50" width="18" height="20" rx="3" fill="#1a2436" stroke="#2563eb"/>
+            <rect x="294" y="50" width="18" height="20" rx="3" fill="#1a2436" stroke="#2563eb"/>
+            <rect x="318" y="50" width="18" height="20" rx="3" fill="#1a2436" stroke="#2563eb"/>
+            <text x="18" y="124" fill="#647388" font-family="monospace" font-size="11">CI/CD PIPELINE</text>
             <line x1="44" y1="168" x2="336" y2="168" stroke="url(#g1)" stroke-width="2"/>
             <g font-family="monospace" font-size="11" text-anchor="middle">
-              <circle cx="44" cy="168" r="9" fill="#15151f" stroke="#a855f7" stroke-width="2"/><text x="44" y="197" fill="#9a9aad">commit</text>
-              <circle cx="142" cy="168" r="9" fill="#15151f" stroke="#a855f7" stroke-width="2"/><text x="142" y="197" fill="#9a9aad">build</text>
-              <circle cx="240" cy="168" r="9" fill="#15151f" stroke="#a855f7" stroke-width="2"/><text x="240" y="197" fill="#9a9aad">test</text>
-              <circle cx="336" cy="168" r="10" fill="#a855f7"/><text x="336" y="197" fill="#c7c7d4">deploy</text>
+              <circle cx="44" cy="168" r="9" fill="#0e1422" stroke="#3b82f6" stroke-width="2"/><text x="44" y="197" fill="#96a3b8">commit</text>
+              <circle cx="142" cy="168" r="9" fill="#0e1422" stroke="#3b82f6" stroke-width="2"/><text x="142" y="197" fill="#96a3b8">build</text>
+              <circle cx="240" cy="168" r="9" fill="#0e1422" stroke="#3b82f6" stroke-width="2"/><text x="240" y="197" fill="#96a3b8">test</text>
+              <circle cx="336" cy="168" r="10" fill="#3b82f6"/><text x="336" y="197" fill="#cdd6e4">deploy</text>
             </g>
           </svg>
         </div>
@@ -416,64 +442,90 @@
       <article class="work reveal">
         <div class="w-viz">
           <svg viewBox="0 0 380 230" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Observability stack with Prometheus, Grafana and New Relic">
-            <defs><linearGradient id="o2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#a855f7"/><stop offset="1" stop-color="#6ea8ff"/></linearGradient></defs>
-            <g font-family="monospace" font-size="10" fill="#9a9aad" text-anchor="middle">
-              <rect x="16" y="46" width="78" height="22" rx="5" fill="#15151f" stroke="#2c2c3c"/><text x="55" y="61">service</text>
-              <rect x="16" y="78" width="78" height="22" rx="5" fill="#15151f" stroke="#2c2c3c"/><text x="55" y="93">service</text>
-              <rect x="16" y="110" width="78" height="22" rx="5" fill="#15151f" stroke="#2c2c3c"/><text x="55" y="125">service</text>
+            <defs><linearGradient id="o2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3b82f6"/><stop offset="1" stop-color="#60a5fa"/></linearGradient></defs>
+            <g font-family="monospace" font-size="10" fill="#96a3b8" text-anchor="middle">
+              <rect x="16" y="46" width="78" height="22" rx="5" fill="#0e1422" stroke="#26324a"/><text x="55" y="61">service</text>
+              <rect x="16" y="78" width="78" height="22" rx="5" fill="#0e1422" stroke="#26324a"/><text x="55" y="93">service</text>
+              <rect x="16" y="110" width="78" height="22" rx="5" fill="#0e1422" stroke="#26324a"/><text x="55" y="125">service</text>
             </g>
-            <path d="M94 57 C132 57 140 89 166 89" stroke="#3a3a4a" stroke-width="1.5" fill="none"/>
-            <path d="M94 89 L166 89" stroke="#3a3a4a" stroke-width="1.5" fill="none"/>
-            <path d="M94 121 C132 121 140 89 166 89" stroke="#3a3a4a" stroke-width="1.5" fill="none"/>
-            <circle cx="188" cy="89" r="22" fill="#15151f" stroke="#a855f7" stroke-width="2"/>
+            <path d="M94 57 C132 57 140 89 166 89" stroke="#394764" stroke-width="1.5" fill="none"/>
+            <path d="M94 89 L166 89" stroke="#394764" stroke-width="1.5" fill="none"/>
+            <path d="M94 121 C132 121 140 89 166 89" stroke="#394764" stroke-width="1.5" fill="none"/>
+            <circle cx="188" cy="89" r="22" fill="#0e1422" stroke="#3b82f6" stroke-width="2"/>
             <text x="188" y="93" font-family="monospace" font-size="10" fill="#fff" text-anchor="middle">Prom</text>
             <line x1="210" y1="89" x2="250" y2="78" stroke="url(#o2)" stroke-width="2"/>
             <path d="M246 73 L256 78 L245 82" fill="none" stroke="url(#o2)" stroke-width="2"/>
-            <rect x="252" y="42" width="112" height="78" rx="8" fill="#15151f" stroke="#2c2c3c"/>
-            <text x="263" y="58" font-family="monospace" font-size="10" fill="#9a9aad">Grafana</text>
-            <rect x="264" y="94" width="12" height="18" rx="2" fill="#7d7cf2"/>
-            <rect x="282" y="84" width="12" height="28" rx="2" fill="#a855f7"/>
-            <rect x="300" y="100" width="12" height="12" rx="2" fill="#7d7cf2"/>
-            <rect x="318" y="78" width="12" height="34" rx="2" fill="#a855f7"/>
-            <rect x="336" y="90" width="12" height="22" rx="2" fill="#7d7cf2"/>
-            <rect x="150" y="150" width="96" height="26" rx="13" fill="#15151f" stroke="#2c2c3c"/>
-            <text x="198" y="167" font-family="monospace" font-size="10" fill="#9a9aad" text-anchor="middle">New Relic</text>
-            <circle cx="300" cy="163" r="15" fill="#15151f" stroke="#a855f7"/>
+            <rect x="252" y="42" width="112" height="78" rx="8" fill="#0e1422" stroke="#26324a"/>
+            <text x="263" y="58" font-family="monospace" font-size="10" fill="#96a3b8">Grafana</text>
+            <rect x="264" y="94" width="12" height="18" rx="2" fill="#2563eb"/>
+            <rect x="282" y="84" width="12" height="28" rx="2" fill="#3b82f6"/>
+            <rect x="300" y="100" width="12" height="12" rx="2" fill="#2563eb"/>
+            <rect x="318" y="78" width="12" height="34" rx="2" fill="#3b82f6"/>
+            <rect x="336" y="90" width="12" height="22" rx="2" fill="#2563eb"/>
+            <rect x="150" y="150" width="96" height="26" rx="13" fill="#0e1422" stroke="#26324a"/>
+            <text x="198" y="167" font-family="monospace" font-size="10" fill="#96a3b8" text-anchor="middle">New Relic</text>
+            <circle cx="300" cy="163" r="15" fill="#0e1422" stroke="#3b82f6"/>
             <text x="300" y="168" font-family="monospace" font-size="14" fill="#f26d6d" text-anchor="middle">!</text>
-            <text x="300" y="190" font-family="monospace" font-size="8" fill="#5f5f72" text-anchor="middle">alerts</text>
+            <text x="300" y="190" font-family="monospace" font-size="8" fill="#647388" text-anchor="middle">alerts</text>
           </svg>
         </div>
         <div class="w-body">
           <div class="w-head"><span class="w-num">02</span><span class="w-cat">Monitoring · Observability</span></div>
-          <h3>Full-Stack Observability at Vroozi</h3>
-          <p>Stood up end-to-end monitoring across Vroozi infrastructure: Prometheus collecting metrics, Grafana dashboards for real-time visibility, and New Relic for application performance monitoring. Turned blind spots into proactive alerting so incidents surface before they reach users.</p>
+          <h3>Full-Stack Observability</h3>
+          <p>Helped stand up end-to-end monitoring across production infrastructure: Prometheus collecting metrics, Grafana dashboards for real-time visibility, and New Relic for application performance monitoring. Turned blind spots into proactive alerting so incidents surface before they reach users.</p>
           <div class="tags"><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">New Relic</span><span class="tag">Alerting</span><span class="tag">APM</span></div>
         </div>
       </article>
       <article class="work reveal">
         <div class="w-viz">
           <svg viewBox="0 0 380 230" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Organization-wide AWS security with Security Hub, GuardDuty, Inspector and Macie">
-            <defs><linearGradient id="s3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a855f7"/><stop offset="1" stop-color="#6ea8ff"/></linearGradient></defs>
-            <rect x="12" y="16" width="356" height="198" rx="12" fill="none" stroke="#2c2c3c" stroke-dasharray="5 5"/>
-            <text x="26" y="36" font-family="monospace" font-size="10" fill="#5f5f72">AWS ORGANIZATION</text>
-            <path d="M190 58 l34 12 v26 c0 23 -16 35 -34 43 c-18 -8 -34 -20 -34 -43 v-26 z" fill="#15151f" stroke="url(#s3)" stroke-width="2"/>
+            <defs><linearGradient id="s3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3b82f6"/><stop offset="1" stop-color="#60a5fa"/></linearGradient></defs>
+            <rect x="12" y="16" width="356" height="198" rx="12" fill="none" stroke="#26324a" stroke-dasharray="5 5"/>
+            <text x="26" y="36" font-family="monospace" font-size="10" fill="#647388">AWS ORGANIZATION</text>
+            <path d="M190 58 l34 12 v26 c0 23 -16 35 -34 43 c-18 -8 -34 -20 -34 -43 v-26 z" fill="#0e1422" stroke="url(#s3)" stroke-width="2"/>
             <text x="190" y="100" font-family="monospace" font-size="9" fill="#fff" text-anchor="middle">Security</text>
             <text x="190" y="112" font-family="monospace" font-size="9" fill="#fff" text-anchor="middle">Hub</text>
-            <g font-family="monospace" font-size="10" fill="#9a9aad" text-anchor="middle">
-              <line x1="120" y1="95" x2="158" y2="95" stroke="#3a3a4a" stroke-width="1.5"/>
-              <rect x="40" y="82" width="80" height="26" rx="6" fill="#15151f" stroke="#2c2c3c"/><text x="80" y="99">GuardDuty</text>
-              <line x1="260" y1="95" x2="222" y2="95" stroke="#3a3a4a" stroke-width="1.5"/>
-              <rect x="260" y="82" width="80" height="26" rx="6" fill="#15151f" stroke="#2c2c3c"/><text x="300" y="99">Inspector</text>
-              <line x1="190" y1="148" x2="190" y2="168" stroke="#3a3a4a" stroke-width="1.5"/>
-              <rect x="150" y="168" width="80" height="26" rx="6" fill="#15151f" stroke="#2c2c3c"/><text x="190" y="185">Macie</text>
+            <g font-family="monospace" font-size="10" fill="#96a3b8" text-anchor="middle">
+              <line x1="120" y1="95" x2="158" y2="95" stroke="#394764" stroke-width="1.5"/>
+              <rect x="40" y="82" width="80" height="26" rx="6" fill="#0e1422" stroke="#26324a"/><text x="80" y="99">GuardDuty</text>
+              <line x1="260" y1="95" x2="222" y2="95" stroke="#394764" stroke-width="1.5"/>
+              <rect x="260" y="82" width="80" height="26" rx="6" fill="#0e1422" stroke="#26324a"/><text x="300" y="99">Inspector</text>
+              <line x1="190" y1="148" x2="190" y2="168" stroke="#394764" stroke-width="1.5"/>
+              <rect x="150" y="168" width="80" height="26" rx="6" fill="#0e1422" stroke="#26324a"/><text x="190" y="185">Macie</text>
             </g>
           </svg>
         </div>
         <div class="w-body">
           <div class="w-head"><span class="w-num">03</span><span class="w-cat">Cloud Security · Compliance</span></div>
           <h3>Organization-Wide AWS Security</h3>
-          <p>Hardened Vroozi's AWS footprint at the organization level. Centralized findings in AWS Security Hub and layered in Inspector for vulnerability scanning, GuardDuty for threat detection, and Macie for sensitive-data discovery — giving security a single pane of glass across every account.</p>
-          <div class="tags"><span class="tag">AWS Security Hub</span><span class="tag">GuardDuty</span><span class="tag">Inspector</span><span class="tag">Macie</span><span class="tag">Org-Level</span><span class="tag">SOC 2</span></div>
+          <p>Worked on hardening the AWS footprint at the organization level — centralizing findings in Security Hub and layering in Inspector for vulnerability scanning, GuardDuty for threat detection, and Macie for sensitive-data discovery, giving security a single pane of glass across every account.</p>
+          <div class="tags"><span class="tag">AWS Security Hub</span><span class="tag">GuardDuty</span><span class="tag">Inspector</span><span class="tag">Macie</span><span class="tag">Org-Level</span></div>
+        </div>
+      </article>
+      <article class="work reveal">
+        <div class="w-viz">
+          <svg viewBox="0 0 380 230" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SOC 2 compliance controls mapped to the Trust Services Criteria">
+            <defs><linearGradient id="sc4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3b82f6"/><stop offset="1" stop-color="#60a5fa"/></linearGradient></defs>
+            <g font-family="monospace" font-size="10" fill="#96a3b8">
+              <rect x="16" y="26" width="132" height="30" rx="6" fill="#0e1422" stroke="#26324a"/><text x="30" y="45">Access Control</text>
+              <rect x="16" y="68" width="132" height="30" rx="6" fill="#0e1422" stroke="#26324a"/><text x="30" y="87">Audit Logging</text>
+              <rect x="16" y="110" width="132" height="30" rx="6" fill="#0e1422" stroke="#26324a"/><text x="30" y="129">Encryption</text>
+              <rect x="16" y="152" width="132" height="30" rx="6" fill="#0e1422" stroke="#26324a"/><text x="30" y="171">Monitoring</text>
+            </g>
+            <path d="M148 41 C212 41 232 100 266 100" stroke="#394764" stroke-width="1.5" fill="none"/>
+            <path d="M148 83 C212 83 234 100 266 100" stroke="#394764" stroke-width="1.5" fill="none"/>
+            <path d="M148 125 C212 125 234 100 266 100" stroke="#394764" stroke-width="1.5" fill="none"/>
+            <path d="M148 167 C212 167 232 100 266 100" stroke="#394764" stroke-width="1.5" fill="none"/>
+            <path d="M300 58 l34 12 v26 c0 23 -16 35 -34 43 c-18 -8 -34 -20 -34 -43 v-26 z" fill="#0e1422" stroke="url(#sc4)" stroke-width="2"/>
+            <path d="M287 99 l9 9 17 -18" stroke="#3b82f6" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="300" y="150" font-family="monospace" font-size="11" fill="#fff" text-anchor="middle">SOC 2</text>
+          </svg>
+        </div>
+        <div class="w-body">
+          <div class="w-head"><span class="w-num">04</span><span class="w-cat">Compliance · Audit</span></div>
+          <h3>SOC 2 Compliance</h3>
+          <p>Contributed to SOC 2 compliance work — implementing and evidencing controls across access management, audit logging, encryption, and monitoring to help meet the Trust Services Criteria.</p>
+          <div class="tags"><span class="tag">SOC 2</span><span class="tag">Access Control</span><span class="tag">Audit Logging</span><span class="tag">Encryption</span><span class="tag">IAM</span><span class="tag">Compliance</span></div>
         </div>
       </article>
     </div>
@@ -499,7 +551,7 @@
       </div>
       <div class="tcat reveal">
         <h4>CI/CD Pipelines</h4>
-        <div class="tags"><span class="tag">Jenkins</span><span class="tag">GitHub Actions</span><span class="tag">GitLab CI</span><span class="tag">Bitbucket Pipelines</span><span class="tag">CircleCI</span><span class="tag">AWS CodePipeline</span><span class="tag">CodeBuild</span><span class="tag">CodeDeploy</span><span class="tag">Rundeck</span></div>
+        <div class="tags"><span class="tag">Jenkins</span><span class="tag">GitHub Actions</span><span class="tag">GitLab CI</span><span class="tag">Bitbucket Pipelines</span><span class="tag">CircleCI</span><span class="tag">AWS CodePipeline</span><span class="tag">CodeBuild</span><span class="tag">CodeDeploy</span><span class="tag">SonarQube</span><span class="tag">Rundeck</span></div>
       </div>
       <div class="tcat reveal">
         <h4>Containers &amp; Orchestration</h4>
@@ -519,7 +571,7 @@
       </div>
       <div class="tcat reveal">
         <h4>Monitoring &amp; Observability</h4>
-        <div class="tags"><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">New Relic</span><span class="tag">CloudWatch</span></div>
+        <div class="tags"><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">New Relic</span><span class="tag">ELK Stack</span><span class="tag">CloudWatch</span></div>
       </div>
       <div class="tcat reveal">
         <h4>Security &amp; Secrets</h4>
@@ -672,22 +724,22 @@
     if(ENV)return ENV;
     const c=document.createElement('canvas');c.width=512;c.height=256;const g=c.getContext('2d');
     const grad=g.createLinearGradient(0,0,0,256);
-    grad.addColorStop(0,'#3b3463');grad.addColorStop(.5,'#514b76');grad.addColorStop(1,'#0b0b14');
+    grad.addColorStop(0,'#223049');grad.addColorStop(.5,'#334155');grad.addColorStop(1,'#0b0b14');
     g.fillStyle=grad;g.fillRect(0,0,512,256);
     const hi=g.createRadialGradient(350,62,8,350,62,160);
     hi.addColorStop(0,'rgba(255,255,255,0.95)');hi.addColorStop(1,'rgba(255,255,255,0)');
     g.fillStyle=hi;g.fillRect(0,0,512,256);
     const vi=g.createRadialGradient(130,150,6,130,150,130);
-    vi.addColorStop(0,'rgba(170,135,255,0.5)');vi.addColorStop(1,'rgba(170,135,255,0)');
+    vi.addColorStop(0,'rgba(96,165,250,0.5)');vi.addColorStop(1,'rgba(96,165,250,0)');
     g.fillStyle=vi;g.fillRect(0,0,512,256);
     ENV=new THREE.CanvasTexture(c);ENV.mapping=THREE.EquirectangularReflectionMapping;
     if('sRGBEncoding'in THREE)ENV.encoding=THREE.sRGBEncoding;
     return ENV;
   }
   function buildLights(scene){
-    scene.add(new THREE.HemisphereLight(0xcfc4ff,0x0a0a12,1.15));   // soft, even sky/ground light
+    scene.add(new THREE.HemisphereLight(0xdce6f5,0x0a0a12,1.15));   // soft, even sky/ground light
     const key=new THREE.DirectionalLight(0xffffff,1.15);key.position.set(4,7,6);scene.add(key);
-    const fill=new THREE.DirectionalLight(0xa88bff,0.5);fill.position.set(-5,-2,3);scene.add(fill);  // subtle violet fill
+    const fill=new THREE.DirectionalLight(0x5b8def,0.5);fill.position.set(-5,-2,3);scene.add(fill);  // subtle violet fill
   }
   function makeRenderer(canvas){
     const r=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true,powerPreference:'high-performance'});
@@ -742,7 +794,7 @@
     function fallbackGem(){
       const geo=new THREE.IcosahedronGeometry(1.6,1);
       const gem=new THREE.Mesh(geo,new THREE.MeshStandardMaterial({color:0xece8f5,metalness:.1,roughness:.22,flatShading:true,envMap:envTex(),envMapIntensity:.6}));
-      const wire=new THREE.Mesh(geo,new THREE.MeshBasicMaterial({color:0xa855f7,wireframe:true,transparent:true,opacity:.25}));wire.scale.setScalar(1.04);
+      const wire=new THREE.Mesh(geo,new THREE.MeshBasicMaterial({color:0x3b82f6,wireframe:true,transparent:true,opacity:.25}));wire.scale.setScalar(1.04);
       rig.add(gem,wire);rig.userData.gem=gem;rig.userData.wire=wire;loaded=true;
     }
     buildModel();
@@ -803,20 +855,18 @@
       return pts;
     }
 
-    group.position.y=-1.1;
+    group.position.y=-0.9;
     const spheres=[];
-    const N=27;
-    const pts=spread(N,12.4,4.4,4.6,1.7);
+    const N=26;
+    const pts=spread(N,12.8,4.8,4.8,1.6);
     for(let i=0;i<N;i++){
-      const labeled=i<LABELS.length;
-      const rad=labeled?(0.5+Math.random()*0.34):(0.32+Math.random()*0.3);
-      const tint=Math.random()<0.26;
-      const m=new THREE.Mesh(new THREE.SphereGeometry(rad,48,48),new THREE.MeshStandardMaterial({color:tint?0xcbbcff:0xf2f1f7,metalness:.05,roughness:.25,envMap:envTex(),envMapIntensity:.6}));
+      const rad=0.4+Math.random()*0.52;
+      const tint=Math.random()<0.22;
+      const m=new THREE.Mesh(new THREE.SphereGeometry(rad,48,48),new THREE.MeshStandardMaterial({color:tint?0xcdddf6:0xeef2f9,metalness:.04,roughness:.22,envMap:envTex(),envMapIntensity:.7}));
       const pos=pts[i];
       m.position.copy(pos);
       const s={mesh:m,base:pos.clone(),phase:Math.random()*Math.PI*2,speed:0.5+Math.random()*0.8,amp:0.12+Math.random()*0.2};
       spheres.push(s);group.add(m);
-      if(labeled){const sp=labelSprite(LABELS[i]);sp.position.set(0,rad+0.42,0);m.add(sp);}
     }
     function resize(){W=canvas.clientWidth;H=canvas.clientHeight;renderer.setSize(W,H,false);cam.aspect=W/H;cam.updateProjectionMatrix();}
     window.addEventListener('resize',resize);
