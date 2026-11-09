@@ -137,16 +137,20 @@
   .tag:hover{color:var(--violet);border-color:var(--violet-2)}
 
   /* WORK */
-  .work-list{display:flex;flex-direction:column;gap:16px}
-  .work{position:relative;display:grid;grid-template-columns:120px 1fr;gap:34px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:34px;overflow:hidden;transition:transform .4s var(--ease),border-color .4s,background .4s;will-change:transform}
-  .work::before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:var(--grad);transform:scaleY(0);transform-origin:top;transition:transform .5s var(--ease)}
+  .work-list{display:flex;flex-direction:column;gap:18px}
+  .work{position:relative;display:grid;grid-template-columns:400px 1fr;gap:32px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px;overflow:hidden;transition:transform .4s var(--ease),border-color .4s,background .4s;will-change:transform}
+  .work::before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:var(--grad);transform:scaleY(0);transform-origin:top;transition:transform .5s var(--ease);z-index:3}
   .work:hover{border-color:var(--line-2);background:var(--surface-2)}
   .work:hover::before{transform:scaleY(1)}
-  .work::after{content:"";position:absolute;inset:0;border-radius:18px;opacity:0;transition:opacity .4s;pointer-events:none;background:radial-gradient(520px circle at var(--mx,50%) var(--my,50%),rgba(168,85,247,.1),transparent 55%)}
+  .work::after{content:"";position:absolute;inset:0;border-radius:18px;opacity:0;transition:opacity .4s;pointer-events:none;background:radial-gradient(520px circle at var(--mx,50%) var(--my,50%),rgba(168,85,247,.1),transparent 55%);z-index:2}
   .work:hover::after{opacity:1}
-  .w-left,.w-body{position:relative;z-index:1}
-  .w-num{font-family:var(--fd);font-weight:800;font-size:2.6rem;line-height:.9;letter-spacing:-.03em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .w-cat{font-family:var(--fm);font-size:.72rem;color:var(--text-faint);text-transform:uppercase;letter-spacing:.09em;margin-top:12px}
+  .w-viz{position:relative;z-index:1;border:1px solid var(--line);border-radius:14px;background:radial-gradient(circle at 50% 22%,rgba(168,85,247,.09),transparent 65%),var(--ink-2);overflow:hidden;display:flex;align-items:center;justify-content:center;padding:16px;transition:border-color .4s}
+  .work:hover .w-viz{border-color:var(--line-2)}
+  .w-viz svg{width:100%;height:auto;display:block}
+  .w-body{position:relative;z-index:1;display:flex;flex-direction:column;justify-content:center}
+  .w-head{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+  .w-num{font-family:var(--fd);font-weight:800;font-size:2rem;line-height:1;letter-spacing:-.03em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .w-cat{font-family:var(--fm);font-size:.72rem;color:var(--text-faint);text-transform:uppercase;letter-spacing:.09em}
   .w-body h3{font-family:var(--fd);font-weight:600;font-size:1.4rem;letter-spacing:-.015em;margin-bottom:12px}
   .w-body p{color:var(--text-dim);font-size:1.01rem;max-width:64ch;margin-bottom:18px}
 
@@ -300,28 +304,28 @@
     <div class="s-head reveal">
       <div class="eyebrow">02 · what i do</div>
       <h2 class="s-title">Services</h2>
-      <p class="s-sub">Four things I own end to end — from provisioning the infrastructure to keeping it secure and observable.</p>
+      <p class="s-sub">Four things I own end to end — continuous integration and delivery first, plus the infrastructure, security, and observability around it.</p>
     </div>
     <div class="do-grid">
       <div class="do-card reveal">
-        <div class="do-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"/><circle cx="7" cy="7" r="0"/></svg></div>
-        <h3>Cloud Infrastructure</h3>
-        <p>Design and run scalable, highly available infrastructure on AWS, Azure, and GCP with Terraform and CloudFormation.</p>
+        <div class="do-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v6m0 6v6M5 12H3m18 0h-2"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h3>CI/CD &amp; Continuous Integration</h3>
+        <p>Design end-to-end pipelines with Jenkins, GitHub Actions, GitLab CI, and CodePipeline — automated build, test, and deploy so every commit ships to production safely.</p>
       </div>
       <div class="do-card reveal">
-        <div class="do-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v6m0 6v6M5 12H3m18 0h-2"/><circle cx="12" cy="12" r="3"/></svg></div>
-        <h3>CI/CD &amp; Automation</h3>
-        <p>Build end-to-end pipelines with Jenkins, GitLab, and Rundeck so every change ships automatically and reliably.</p>
+        <div class="do-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"/><circle cx="7" cy="7" r="0"/></svg></div>
+        <h3>Cloud &amp; Infrastructure as Code</h3>
+        <p>Provision scalable, highly available infrastructure on AWS, Azure, and GCP with Terraform, CloudFormation, and Ansible — repeatable and version-controlled.</p>
+      </div>
+      <div class="do-card reveal">
+        <div class="do-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h4l2 6 4-14 2 8h6"/></svg></div>
+        <h3>Observability</h3>
+        <p>Full-stack monitoring with Prometheus, Grafana, New Relic, and CloudWatch — proactive alerting before users feel issues.</p>
       </div>
       <div class="do-card reveal">
         <div class="do-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/></svg></div>
         <h3>Cloud Security</h3>
         <p>Harden environments at the org level — Security Hub, GuardDuty, Inspector, Macie, Vault, and KMS encryption.</p>
-      </div>
-      <div class="do-card reveal">
-        <div class="do-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h4l2 6 4-14 2 8h6"/></svg></div>
-        <h3>Observability</h3>
-        <p>Full-stack monitoring with Prometheus, Grafana, New Relic, and CloudWatch — alerting before users feel issues.</p>
       </div>
     </div>
   </div>
@@ -380,24 +384,93 @@
     </div>
     <div class="work-list">
       <article class="work reveal">
-        <div class="w-left"><div class="w-num">01</div><div class="w-cat">Cloud Migration · CI/CD</div></div>
+        <div class="w-viz">
+          <svg viewBox="0 0 380 230" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Railway to AWS migration with CI/CD pipeline">
+            <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#a855f7"/><stop offset="1" stop-color="#6ea8ff"/></linearGradient></defs>
+            <rect x="18" y="28" width="96" height="48" rx="8" fill="#15151f" stroke="#2c2c3c"/>
+            <text x="66" y="56" fill="#9a9aad" font-family="monospace" font-size="13" text-anchor="middle">Railway</text>
+            <line x1="120" y1="52" x2="250" y2="52" stroke="url(#g1)" stroke-width="2" stroke-dasharray="4 4"/>
+            <path d="M245 47 L256 52 L245 57" fill="none" stroke="url(#g1)" stroke-width="2"/>
+            <rect x="258" y="24" width="104" height="56" rx="10" fill="#15151f" stroke="#a855f7"/>
+            <text x="310" y="42" fill="#fff" font-family="monospace" font-size="12" text-anchor="middle">AWS</text>
+            <rect x="270" y="50" width="18" height="20" rx="3" fill="#241f3a" stroke="#7d7cf2"/>
+            <rect x="294" y="50" width="18" height="20" rx="3" fill="#241f3a" stroke="#7d7cf2"/>
+            <rect x="318" y="50" width="18" height="20" rx="3" fill="#241f3a" stroke="#7d7cf2"/>
+            <text x="18" y="124" fill="#5f5f72" font-family="monospace" font-size="11">CI/CD PIPELINE</text>
+            <line x1="44" y1="168" x2="336" y2="168" stroke="url(#g1)" stroke-width="2"/>
+            <g font-family="monospace" font-size="11" text-anchor="middle">
+              <circle cx="44" cy="168" r="9" fill="#15151f" stroke="#a855f7" stroke-width="2"/><text x="44" y="197" fill="#9a9aad">commit</text>
+              <circle cx="142" cy="168" r="9" fill="#15151f" stroke="#a855f7" stroke-width="2"/><text x="142" y="197" fill="#9a9aad">build</text>
+              <circle cx="240" cy="168" r="9" fill="#15151f" stroke="#a855f7" stroke-width="2"/><text x="240" y="197" fill="#9a9aad">test</text>
+              <circle cx="336" cy="168" r="10" fill="#a855f7"/><text x="336" y="197" fill="#c7c7d4">deploy</text>
+            </g>
+          </svg>
+        </div>
         <div class="w-body">
+          <div class="w-head"><span class="w-num">01</span><span class="w-cat">Cloud Migration · CI/CD</span></div>
           <h3>Railway → AWS Migration</h3>
           <p>Migrated a production application off Railway onto AWS and re-architected it into a scalable, fault-tolerant system. Built an end-to-end CI/CD pipeline so every change ships from commit to production, and added API rate limiting to keep the platform stable under load.</p>
           <div class="tags"><span class="tag">AWS</span><span class="tag">End-to-End CI/CD</span><span class="tag">Auto Scaling</span><span class="tag">Rate Limiting</span><span class="tag">Docker</span><span class="tag">Terraform</span></div>
         </div>
       </article>
       <article class="work reveal">
-        <div class="w-left"><div class="w-num">02</div><div class="w-cat">Monitoring · Observability</div></div>
+        <div class="w-viz">
+          <svg viewBox="0 0 380 230" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Observability stack with Prometheus, Grafana and New Relic">
+            <defs><linearGradient id="o2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#a855f7"/><stop offset="1" stop-color="#6ea8ff"/></linearGradient></defs>
+            <g font-family="monospace" font-size="10" fill="#9a9aad" text-anchor="middle">
+              <rect x="16" y="46" width="78" height="22" rx="5" fill="#15151f" stroke="#2c2c3c"/><text x="55" y="61">service</text>
+              <rect x="16" y="78" width="78" height="22" rx="5" fill="#15151f" stroke="#2c2c3c"/><text x="55" y="93">service</text>
+              <rect x="16" y="110" width="78" height="22" rx="5" fill="#15151f" stroke="#2c2c3c"/><text x="55" y="125">service</text>
+            </g>
+            <path d="M94 57 C132 57 140 89 166 89" stroke="#3a3a4a" stroke-width="1.5" fill="none"/>
+            <path d="M94 89 L166 89" stroke="#3a3a4a" stroke-width="1.5" fill="none"/>
+            <path d="M94 121 C132 121 140 89 166 89" stroke="#3a3a4a" stroke-width="1.5" fill="none"/>
+            <circle cx="188" cy="89" r="22" fill="#15151f" stroke="#a855f7" stroke-width="2"/>
+            <text x="188" y="93" font-family="monospace" font-size="10" fill="#fff" text-anchor="middle">Prom</text>
+            <line x1="210" y1="89" x2="250" y2="78" stroke="url(#o2)" stroke-width="2"/>
+            <path d="M246 73 L256 78 L245 82" fill="none" stroke="url(#o2)" stroke-width="2"/>
+            <rect x="252" y="42" width="112" height="78" rx="8" fill="#15151f" stroke="#2c2c3c"/>
+            <text x="263" y="58" font-family="monospace" font-size="10" fill="#9a9aad">Grafana</text>
+            <rect x="264" y="94" width="12" height="18" rx="2" fill="#7d7cf2"/>
+            <rect x="282" y="84" width="12" height="28" rx="2" fill="#a855f7"/>
+            <rect x="300" y="100" width="12" height="12" rx="2" fill="#7d7cf2"/>
+            <rect x="318" y="78" width="12" height="34" rx="2" fill="#a855f7"/>
+            <rect x="336" y="90" width="12" height="22" rx="2" fill="#7d7cf2"/>
+            <rect x="150" y="150" width="96" height="26" rx="13" fill="#15151f" stroke="#2c2c3c"/>
+            <text x="198" y="167" font-family="monospace" font-size="10" fill="#9a9aad" text-anchor="middle">New Relic</text>
+            <circle cx="300" cy="163" r="15" fill="#15151f" stroke="#a855f7"/>
+            <text x="300" y="168" font-family="monospace" font-size="14" fill="#f26d6d" text-anchor="middle">!</text>
+            <text x="300" y="190" font-family="monospace" font-size="8" fill="#5f5f72" text-anchor="middle">alerts</text>
+          </svg>
+        </div>
         <div class="w-body">
+          <div class="w-head"><span class="w-num">02</span><span class="w-cat">Monitoring · Observability</span></div>
           <h3>Full-Stack Observability at Vroozi</h3>
           <p>Stood up end-to-end monitoring across Vroozi infrastructure: Prometheus collecting metrics, Grafana dashboards for real-time visibility, and New Relic for application performance monitoring. Turned blind spots into proactive alerting so incidents surface before they reach users.</p>
           <div class="tags"><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">New Relic</span><span class="tag">Alerting</span><span class="tag">APM</span></div>
         </div>
       </article>
       <article class="work reveal">
-        <div class="w-left"><div class="w-num">03</div><div class="w-cat">Cloud Security · Compliance</div></div>
+        <div class="w-viz">
+          <svg viewBox="0 0 380 230" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Organization-wide AWS security with Security Hub, GuardDuty, Inspector and Macie">
+            <defs><linearGradient id="s3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a855f7"/><stop offset="1" stop-color="#6ea8ff"/></linearGradient></defs>
+            <rect x="12" y="16" width="356" height="198" rx="12" fill="none" stroke="#2c2c3c" stroke-dasharray="5 5"/>
+            <text x="26" y="36" font-family="monospace" font-size="10" fill="#5f5f72">AWS ORGANIZATION</text>
+            <path d="M190 58 l34 12 v26 c0 23 -16 35 -34 43 c-18 -8 -34 -20 -34 -43 v-26 z" fill="#15151f" stroke="url(#s3)" stroke-width="2"/>
+            <text x="190" y="100" font-family="monospace" font-size="9" fill="#fff" text-anchor="middle">Security</text>
+            <text x="190" y="112" font-family="monospace" font-size="9" fill="#fff" text-anchor="middle">Hub</text>
+            <g font-family="monospace" font-size="10" fill="#9a9aad" text-anchor="middle">
+              <line x1="120" y1="95" x2="158" y2="95" stroke="#3a3a4a" stroke-width="1.5"/>
+              <rect x="40" y="82" width="80" height="26" rx="6" fill="#15151f" stroke="#2c2c3c"/><text x="80" y="99">GuardDuty</text>
+              <line x1="260" y1="95" x2="222" y2="95" stroke="#3a3a4a" stroke-width="1.5"/>
+              <rect x="260" y="82" width="80" height="26" rx="6" fill="#15151f" stroke="#2c2c3c"/><text x="300" y="99">Inspector</text>
+              <line x1="190" y1="148" x2="190" y2="168" stroke="#3a3a4a" stroke-width="1.5"/>
+              <rect x="150" y="168" width="80" height="26" rx="6" fill="#15151f" stroke="#2c2c3c"/><text x="190" y="185">Macie</text>
+            </g>
+          </svg>
+        </div>
         <div class="w-body">
+          <div class="w-head"><span class="w-num">03</span><span class="w-cat">Cloud Security · Compliance</span></div>
           <h3>Organization-Wide AWS Security</h3>
           <p>Hardened Vroozi's AWS footprint at the organization level. Centralized findings in AWS Security Hub and layered in Inspector for vulnerability scanning, GuardDuty for threat detection, and Macie for sensitive-data discovery — giving security a single pane of glass across every account.</p>
           <div class="tags"><span class="tag">AWS Security Hub</span><span class="tag">GuardDuty</span><span class="tag">Inspector</span><span class="tag">Macie</span><span class="tag">Org-Level</span><span class="tag">SOC 2</span></div>
@@ -421,36 +494,52 @@
 
     <div class="tech-cats">
       <div class="tcat reveal">
-        <h4>Cloud</h4>
+        <h4>Cloud Platforms</h4>
         <div class="tags"><span class="tag">AWS</span><span class="tag">Azure</span><span class="tag">GCP</span></div>
       </div>
       <div class="tcat reveal">
-        <h4>Containers &amp; Orchestration</h4>
-        <div class="tags"><span class="tag">Kubernetes</span><span class="tag">Docker</span><span class="tag">Helm</span><span class="tag">Amazon ECS</span><span class="tag">AWS Fargate</span></div>
+        <h4>CI/CD Pipelines</h4>
+        <div class="tags"><span class="tag">Jenkins</span><span class="tag">GitHub Actions</span><span class="tag">GitLab CI</span><span class="tag">Bitbucket Pipelines</span><span class="tag">CircleCI</span><span class="tag">AWS CodePipeline</span><span class="tag">CodeBuild</span><span class="tag">CodeDeploy</span><span class="tag">Rundeck</span></div>
       </div>
       <div class="tcat reveal">
-        <h4>CI/CD &amp; Automation</h4>
-        <div class="tags"><span class="tag">Jenkins</span><span class="tag">GitHub Actions</span><span class="tag">GitLab CI</span><span class="tag">Bitbucket Pipelines</span><span class="tag">CircleCI</span><span class="tag">AWS CodePipeline</span><span class="tag">Rundeck</span></div>
+        <h4>Containers &amp; Orchestration</h4>
+        <div class="tags"><span class="tag">Kubernetes</span><span class="tag">Docker</span><span class="tag">Helm</span><span class="tag">Amazon ECS</span><span class="tag">AWS Fargate</span><span class="tag">ECR</span></div>
       </div>
       <div class="tcat reveal">
         <h4>Infrastructure as Code</h4>
         <div class="tags"><span class="tag">Terraform</span><span class="tag">CloudFormation</span><span class="tag">Ansible</span></div>
       </div>
       <div class="tcat reveal">
+        <h4>Operating Systems</h4>
+        <div class="tags"><span class="tag">Linux</span><span class="tag">Ubuntu</span><span class="tag">Amazon Linux</span></div>
+      </div>
+      <div class="tcat reveal">
+        <h4>Version Control</h4>
+        <div class="tags"><span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">GitLab</span><span class="tag">Bitbucket</span></div>
+      </div>
+      <div class="tcat reveal">
         <h4>Monitoring &amp; Observability</h4>
         <div class="tags"><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">New Relic</span><span class="tag">CloudWatch</span></div>
       </div>
       <div class="tcat reveal">
-        <h4>Security</h4>
-        <div class="tags"><span class="tag">AWS Security Hub</span><span class="tag">GuardDuty</span><span class="tag">Inspector</span><span class="tag">Macie</span><span class="tag">HashiCorp Vault</span><span class="tag">KMS</span></div>
+        <h4>Security &amp; Secrets</h4>
+        <div class="tags"><span class="tag">AWS Security Hub</span><span class="tag">GuardDuty</span><span class="tag">Inspector</span><span class="tag">Macie</span><span class="tag">HashiCorp Vault</span><span class="tag">KMS</span><span class="tag">IAM</span></div>
       </div>
       <div class="tcat reveal">
-        <h4>Data &amp; Analytics</h4>
+        <h4>Databases</h4>
+        <div class="tags"><span class="tag">PostgreSQL</span><span class="tag">MongoDB</span><span class="tag">MySQL</span></div>
+      </div>
+      <div class="tcat reveal">
+        <h4>Web &amp; App Servers</h4>
+        <div class="tags"><span class="tag">Nginx</span><span class="tag">Apache Tomcat</span></div>
+      </div>
+      <div class="tcat reveal">
+        <h4>Scripting &amp; Languages</h4>
+        <div class="tags"><span class="tag">Python</span><span class="tag">Bash</span><span class="tag">Java</span><span class="tag">JavaScript</span><span class="tag">SQL</span></div>
+      </div>
+      <div class="tcat reveal">
+        <h4>Data &amp; Workflow Orchestration</h4>
         <div class="tags"><span class="tag">Dagster</span><span class="tag">Airflow</span><span class="tag">Airbyte</span><span class="tag">Metabase</span><span class="tag">Hex</span></div>
-      </div>
-      <div class="tcat reveal">
-        <h4>Languages &amp; Scripting</h4>
-        <div class="tags"><span class="tag">Python</span><span class="tag">Bash</span><span class="tag">SQL</span></div>
       </div>
     </div>
 
@@ -519,7 +608,7 @@
   document.getElementById('toTop').addEventListener('click',()=>window.scrollTo({top:0,behavior:reduce?'auto':'smooth'}));
 
   /* typed role */
-  const roles=['Cloud Infrastructure Engineer','CI/CD & Automation','Kubernetes Platform Engineer','Cloud Security','Observability & Reliability'];
+  const roles=['CI/CD & Automation Engineer','Continuous Integration & Delivery','Cloud Infrastructure Engineer','Kubernetes Platform Engineer','Observability & Reliability'];
   const typedEl=document.getElementById('typed');
   if(reduce){typedEl.textContent=roles[0];}
   else{let ri=0,ci=0,del=false;(function t(){const w=roles[ri];typedEl.textContent=w.slice(0,ci);
@@ -688,7 +777,7 @@
     buildLights(scene);
     const group=new THREE.Group();scene.add(group);
 
-    const LABELS=['AWS','Kubernetes','Docker','Helm','Terraform','Ansible','Jenkins','GitHub Actions','GitLab CI','CircleCI','Bitbucket','Prometheus','Grafana','New Relic','Vault','GuardDuty','GCP','Azure'];
+    const LABELS=['AWS','Kubernetes','Docker','Helm','Terraform','Ansible','Jenkins','GitHub Actions','GitLab CI','CircleCI','Git','Linux','Prometheus','Grafana','Vault','Nginx','CodePipeline','GCP','Azure','Bitbucket'];
     function labelSprite(text){
       const fontPx=52,pad=30,h=100;
       const meas=document.createElement('canvas').getContext('2d');
