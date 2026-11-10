@@ -7,14 +7,14 @@
 <meta name="description" content="Taimoor Ali — DevOps Engineer. Cloud infrastructure, Kubernetes, CI/CD and security across AWS, Azure and GCP.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#0a0f1a; --ink-2:#0e1422; --surface:#131b2b; --surface-2:#1b2537;
-    --line:#26324a; --line-2:#36456180;
-    --text:#e9eef7; --text-dim:#96a3b8; --text-faint:#647388;
-    --violet:#3b82f6; --violet-2:#2563eb; --blue:#60a5fa;
-    --grad:linear-gradient(120deg,#3b82f6,#60a5fa);
+    --ink:#0A0C12; --ink-2:#0f1219; --surface:#141822; --surface-2:#1b2030;
+    --line:#232838; --line-2:#343b52;
+    --text:#F2EEE6; --text-dim:#a5a8b3; --text-faint:#6a6f80;
+    --violet:#4C6FFF; --violet-2:#2B50E8; --blue:#8FA6FF; --gold:#D4B26A; --ok:#10B981; --warn:#EAB308;
+    --grad:linear-gradient(120deg,#4C6FFF,#8FA6FF); --fs:'Playfair Display',Georgia,serif;
     --maxw:1180px; --ease:cubic-bezier(.22,.61,.36,1);
     --fd:'Sora',system-ui,sans-serif; --fb:'Inter',system-ui,sans-serif; --fm:'JetBrains Mono',ui-monospace,monospace;
   }
@@ -24,7 +24,7 @@
   a{color:inherit;text-decoration:none}
   ul{list-style:none}
   canvas{display:block}
-  ::selection{background:rgba(59,130,246,.32);color:#fff}
+  ::selection{background:rgba(76,111,255,.32);color:#fff}
   :focus-visible{outline:2px solid var(--violet);outline-offset:3px;border-radius:4px}
 
   body::before{content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.03;mix-blend-mode:overlay;
@@ -40,14 +40,14 @@
 
   /* NAV */
   header.nav{position:fixed;inset:0 0 auto 0;z-index:100;transition:background .35s,border-color .35s,backdrop-filter .35s;border-bottom:1px solid transparent}
-  header.nav.scrolled{background:rgba(8,8,12,.72);backdrop-filter:blur(14px) saturate(150%);-webkit-backdrop-filter:blur(14px) saturate(150%);border-bottom:1px solid var(--line)}
+  header.nav.scrolled{background:rgba(10,12,18,.72);backdrop-filter:blur(14px) saturate(150%);-webkit-backdrop-filter:blur(14px) saturate(150%);border-bottom:1px solid var(--line)}
   .nav-in{display:flex;align-items:center;justify-content:space-between;height:72px}
   .brand{display:flex;align-items:center;gap:12px}
-  .brand .mark{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;background:var(--grad);color:#0a0612;font-family:var(--fd);font-weight:800;font-size:1rem;box-shadow:0 6px 22px rgba(59,130,246,.3)}
+  .brand .mark{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;background:var(--grad);color:#0a0612;font-family:var(--fd);font-weight:800;font-size:1rem;box-shadow:0 6px 22px rgba(76,111,255,.3)}
   .brand .nm{font-family:var(--fd);font-weight:600;font-size:.95rem;letter-spacing:-.01em}
   .brand .st{font-family:var(--fm);font-size:.66rem;color:var(--text-faint);display:flex;align-items:center;gap:6px}
-  .dot{width:7px;height:7px;border-radius:50%;background:var(--violet);box-shadow:0 0 0 0 rgba(59,130,246,.6);animation:pulse 2.4s infinite}
-  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(59,130,246,.55)}70%{box-shadow:0 0 0 7px rgba(59,130,246,0)}100%{box-shadow:0 0 0 0 rgba(59,130,246,0)}}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--gold);animation:pulse 2.4s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(212,178,106,.55)}70%{box-shadow:0 0 0 7px rgba(212,178,106,0)}100%{box-shadow:0 0 0 0 rgba(212,178,106,0)}}
   nav.links{display:flex;align-items:center;gap:4px}
   nav.links a.lk{font-family:var(--fm);font-size:.8rem;color:var(--text-dim);padding:9px 13px;border-radius:8px;transition:color .2s,background .2s}
   nav.links a.lk:hover{color:var(--text);background:var(--surface)}
@@ -60,12 +60,12 @@
   /* HERO */
   .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
   .hero-spot{position:absolute;z-index:0;top:-20%;left:50%;transform:translateX(-50%);width:120%;height:70%;pointer-events:none;
-    background:radial-gradient(ellipse 50% 60% at 50% 0%,rgba(59,130,246,.16),rgba(110,168,255,.05) 45%,transparent 70%);filter:blur(10px)}
+    background:radial-gradient(ellipse 50% 60% at 50% 0%,rgba(76,111,255,.16),rgba(110,168,255,.05) 45%,transparent 70%);filter:blur(10px)}
   .hero-grid{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.4;will-change:transform;transition:transform .3s ease-out;
     background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:70px 70px;
     mask-image:radial-gradient(circle at 50% 45%,#000,transparent 75%);-webkit-mask-image:radial-gradient(circle at 50% 45%,#000,transparent 75%)}
   .hero-in{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;width:100%;padding-top:80px}
-  .avail{display:inline-flex;align-items:center;gap:9px;font-family:var(--fm);font-size:.74rem;letter-spacing:.04em;color:var(--text-dim);background:rgba(16,16,24,.6);border:1px solid var(--line-2);border-radius:30px;padding:7px 15px 7px 12px;margin-bottom:24px;backdrop-filter:blur(6px);opacity:0;animation:fu .7s var(--ease) .1s forwards}
+  .avail{display:inline-flex;align-items:center;gap:9px;font-family:var(--fm);font-size:.74rem;letter-spacing:.04em;color:var(--text-dim);background:rgba(20,24,34,.6);border:1px solid var(--line-2);border-radius:30px;padding:7px 15px 7px 12px;margin-bottom:24px;backdrop-filter:blur(6px);opacity:0;animation:fu .7s var(--ease) .1s forwards}
   .avail .dot{width:7px;height:7px}
   .avail b{color:var(--text);font-weight:500}
   .h-eye{font-family:var(--fm);font-size:.86rem;color:var(--violet);margin-bottom:18px;opacity:0;animation:fu .7s var(--ease) .2s forwards}
@@ -81,8 +81,8 @@
   .h-lede{max-width:46ch;color:var(--text-dim);font-size:1.08rem;margin:20px 0 34px;opacity:0;animation:fu .7s var(--ease) 1.05s forwards}
   .h-cta{display:flex;flex-wrap:wrap;gap:14px;opacity:0;animation:fu .7s var(--ease) 1.2s forwards}
   .btn{font-family:var(--fm);font-size:.88rem;padding:14px 24px;border-radius:11px;cursor:pointer;display:inline-flex;align-items:center;gap:10px;transition:transform .2s var(--ease),box-shadow .25s,background .25s,border-color .25s}
-  .btn.pr{background:var(--grad);color:#0a0612;font-weight:600;box-shadow:0 10px 30px rgba(59,130,246,.28)}
-  .btn.pr:hover{transform:translateY(-2px);box-shadow:0 16px 42px rgba(59,130,246,.42)}
+  .btn.pr{background:var(--grad);color:#0a0612;font-weight:600;box-shadow:0 10px 30px rgba(76,111,255,.28)}
+  .btn.pr:hover{transform:translateY(-2px);box-shadow:0 16px 42px rgba(76,111,255,.42)}
   .btn.gh{background:transparent;color:var(--text);border:1px solid var(--line-2)}
   .btn.gh:hover{transform:translateY(-2px);border-color:var(--violet-2);background:var(--surface)}
   .btn .aw{transition:transform .2s var(--ease)}
@@ -117,7 +117,7 @@
   .do-grid::-webkit-scrollbar-thumb:hover{background:var(--violet)}
   .do-hint{font-family:var(--fm);font-size:.72rem;color:var(--text-faint);margin-top:4px;display:flex;align-items:center;gap:8px}
   .do-card{flex:0 0 300px;scroll-snap-align:start;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px 24px;position:relative;overflow:hidden;transition:transform .35s var(--ease),border-color .35s,background .35s;will-change:transform}
-  .do-card::after{content:"";position:absolute;inset:0;border-radius:16px;opacity:0;transition:opacity .4s;pointer-events:none;background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(59,130,246,.12),transparent 55%)}
+  .do-card::after{content:"";position:absolute;inset:0;border-radius:16px;opacity:0;transition:opacity .4s;pointer-events:none;background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(76,111,255,.12),transparent 55%)}
   .do-card:hover{border-color:var(--line-2);background:var(--surface-2)}
   .do-card:hover::after{opacity:1}
   .do-ic{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:var(--ink-2);border:1px solid var(--line-2);color:var(--violet);margin-bottom:18px;position:relative;z-index:1}
@@ -125,18 +125,22 @@
   .do-card p{color:var(--text-dim);font-size:.92rem;position:relative;z-index:1}
 
   /* EXPERIENCE */
-  .tl{position:relative;padding-left:34px}
-  .tl::before{content:"";position:absolute;left:8px;top:8px;bottom:8px;width:1px;background:linear-gradient(var(--violet-2),var(--line) 60%,transparent)}
-  .job{position:relative;padding:0 0 46px}
-  .job:last-child{padding-bottom:0}
-  .job::before{content:"";position:absolute;left:-30px;top:6px;width:15px;height:15px;border-radius:50%;background:var(--ink);border:2px solid var(--violet-2);box-shadow:0 0 0 4px var(--ink)}
-  .job.cur::before{background:var(--violet);border-color:var(--violet);box-shadow:0 0 0 4px var(--ink),0 0 16px rgba(59,130,246,.6)}
+  .tl{position:relative;padding-left:44px}
+  .tl::before{content:"";position:absolute;left:11px;top:6px;bottom:6px;width:2px;background:var(--line);border-radius:2px}
+  .tl::after{content:"";position:absolute;left:11px;top:6px;width:2px;height:calc((100% - 12px) * var(--p,0));background:linear-gradient(var(--violet),var(--ok));border-radius:2px}
+  .job{position:relative;margin:0 0 22px;padding:24px 26px;background:var(--surface);border:1px solid var(--line);border-radius:16px;transition:opacity .5s var(--ease),transform .5s var(--ease),border-color .4s,box-shadow .4s;transition-delay:0s !important}
+  .job:last-child{margin-bottom:0}
+  .job.reveal.in{opacity:.3;transform:translateX(16px) scale(.985)}
+  .job.reveal.in.on{opacity:1;transform:none;border-color:var(--line-2);box-shadow:0 18px 40px rgba(0,0,0,.28)}
+  .job::before{content:"";position:absolute;left:-40px;top:28px;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2px solid var(--line-2);box-shadow:0 0 0 4px var(--ink);transition:background .4s,border-color .4s,box-shadow .4s}
+  .job.on::before{background:var(--violet);border-color:var(--violet);box-shadow:0 0 0 4px var(--ink),0 0 14px rgba(76,111,255,.6)}
+  .job.cur.on::before{background:var(--gold);border-color:var(--gold);box-shadow:0 0 0 4px var(--ink),0 0 14px rgba(212,178,106,.6)}
   .j-meta{display:flex;flex-wrap:wrap;align-items:baseline;gap:12px;margin-bottom:8px}
   .j-role{font-family:var(--fd);font-weight:600;font-size:1.2rem;letter-spacing:-.01em}
   .j-co{color:var(--violet);font-weight:500}
   .j-date{font-family:var(--fm);font-size:.74rem;color:var(--text-faint);margin-left:auto;background:var(--surface);border:1px solid var(--line);padding:4px 11px;border-radius:20px;white-space:nowrap}
-  .job.cur .j-date{color:var(--violet);border-color:var(--violet-2)}
-  .job p{color:var(--text-dim);font-size:1rem;max-width:70ch;margin-bottom:14px}
+  .job.cur .j-date{color:var(--gold);border-color:rgba(212,178,106,.5)}
+  .job p{color:var(--text-dim);font-size:1rem;max-width:74ch;margin-bottom:14px}
   .tags{display:flex;flex-wrap:wrap;gap:8px}
   .tag{font-family:var(--fm);font-size:.74rem;color:var(--text-dim);background:var(--ink-2);border:1px solid var(--line);border-radius:7px;padding:5px 10px;transition:color .2s,border-color .2s}
   .tag:hover{color:var(--violet);border-color:var(--violet-2)}
@@ -147,9 +151,24 @@
   .work::before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:var(--grad);transform:scaleY(0);transform-origin:top;transition:transform .5s var(--ease);z-index:3}
   .work:hover{border-color:var(--line-2);background:var(--surface-2)}
   .work:hover::before{transform:scaleY(1)}
-  .work::after{content:"";position:absolute;inset:0;border-radius:18px;opacity:0;transition:opacity .4s;pointer-events:none;background:radial-gradient(520px circle at var(--mx,50%) var(--my,50%),rgba(59,130,246,.1),transparent 55%);z-index:2}
+  .work::after{content:"";position:absolute;inset:0;border-radius:18px;opacity:0;transition:opacity .4s;pointer-events:none;background:radial-gradient(520px circle at var(--mx,50%) var(--my,50%),rgba(76,111,255,.1),transparent 55%);z-index:2}
   .work:hover::after{opacity:1}
-  .w-viz{position:relative;z-index:1;border:1px solid var(--line);border-radius:14px;background:radial-gradient(circle at 50% 22%,rgba(59,130,246,.09),transparent 65%),var(--ink-2);overflow:hidden;display:flex;align-items:center;justify-content:center;padding:16px;transition:border-color .4s}
+  @media (min-width:761px){
+    .work-list{gap:30px;padding-bottom:30px}
+    .work{position:sticky;top:calc(96px + var(--i,0) * 18px);min-height:350px;box-shadow:0 -14px 40px rgba(0,0,0,.4)}
+    .work:nth-child(2){--i:1}.work:nth-child(3){--i:2}.work:nth-child(4){--i:3}.work:nth-child(5){--i:4}
+  }
+  /* TERMINAL */
+  .term{margin-top:56px;border:1px solid var(--line);border-radius:14px;background:#0a0c10;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.35)}
+  .term-bar{display:flex;align-items:center;gap:8px;padding:12px 16px;background:#0f1219;border-bottom:1px solid var(--line)}
+  .tb{width:11px;height:11px;border-radius:50%}.tb.r{background:#EF4444}.tb.y{background:#EAB308}.tb.g{background:#22C55E}
+  .term-title{font-family:var(--fm);font-size:.74rem;color:var(--text-faint);margin-left:10px}
+  .term-badge{margin-left:auto;font-family:var(--fm);font-size:.7rem;color:var(--ok);border:1px solid rgba(16,185,129,.4);background:rgba(16,185,129,.08);border-radius:20px;padding:4px 10px;display:inline-flex;align-items:center;gap:7px}
+  .term-badge i{width:6px;height:6px;border-radius:50%;background:var(--ok)}
+  .term-body{font-family:var(--fm);font-size:.86rem;line-height:1.75;color:#c9d1d9;padding:20px 22px;min-height:420px;white-space:pre-wrap;overflow-x:auto;margin:0}
+  .term-body .p,.term-body .ok{color:var(--ok)}.term-body .c{color:var(--text)}.term-body .k{color:var(--violet)}
+  .term-cur{display:inline-block;width:8px;height:1em;background:var(--violet);vertical-align:-2px;animation:blink 1s steps(1) infinite}
+  .w-viz{position:relative;z-index:1;border:1px solid var(--line);border-radius:14px;background:radial-gradient(circle at 50% 22%,rgba(76,111,255,.09),transparent 65%),var(--ink-2);overflow:hidden;display:flex;align-items:center;justify-content:center;padding:16px;transition:border-color .4s}
   .work:hover .w-viz{border-color:var(--line-2)}
   .w-viz svg{width:100%;height:auto;display:block}
   .w-body{position:relative;z-index:1;display:flex;flex-direction:column;justify-content:center}
@@ -161,7 +180,7 @@
 
   /* TECH STACK (3D) */
   .tech{position:relative;overflow:hidden}
-  .tech-stage{position:relative;height:600px;border:1px solid var(--line);border-radius:22px;background:radial-gradient(circle at 50% 40%,rgba(59,130,246,.06),transparent 60%),var(--ink-2);overflow:hidden}
+  .tech-stage{position:relative;height:600px;border:1px solid var(--line);border-radius:22px;background:radial-gradient(circle at 50% 40%,rgba(76,111,255,.06),transparent 60%),var(--ink-2);overflow:hidden}
   #techCanvas{width:100%;height:100%}
   .tech-head{position:absolute;z-index:2;top:30px;left:32px;right:32px;pointer-events:none}
   .tech-hint{position:absolute;z-index:2;top:34px;right:32px;font-family:var(--fm);font-size:.7rem;color:var(--text-faint);pointer-events:none}
@@ -208,7 +227,7 @@
     .work{grid-template-columns:1fr;gap:18px;padding:26px 22px}
     .w-num{font-size:2.1rem}
     .tech-stage{height:480px}
-    nav.links{position:fixed;top:72px;left:0;right:0;flex-direction:column;align-items:stretch;gap:2px;background:rgba(8,8,12,.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:14px 20px 22px;transform:translateY(-140%);transition:transform .4s var(--ease);pointer-events:none}
+    nav.links{position:fixed;top:72px;left:0;right:0;flex-direction:column;align-items:stretch;gap:2px;background:rgba(10,12,18,.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:14px 20px 22px;transform:translateY(-140%);transition:transform .4s var(--ease);pointer-events:none}
     nav.links.open{transform:translateY(0);pointer-events:auto}
     nav.links a.lk{padding:13px 12px;font-size:.95rem}
     .rez{margin-left:0;margin-top:6px;justify-content:center}
@@ -223,6 +242,53 @@
     .j-date{margin-left:0}
     .tech-cats{grid-template-columns:1fr}
   }
+  /* ===== premium accents ===== */
+  .eyebrow{color:var(--gold)} .eyebrow::before{background:var(--gold)}
+  .s-title{font-family:var(--fs);font-weight:600;text-transform:none;letter-spacing:-.01em;line-height:1.08}
+  .w-num{background:none;-webkit-background-clip:border-box;background-clip:border-box;color:var(--gold)}
+  .stat .n .sf,.cpill .cb{color:var(--gold)}
+  /* ===== pinned scroll scenes (experience + work) ===== */
+  .stage .ring,.stage .s-label,.stage .s-foot,.stage .sidx{display:none}
+  .work-list .slides{display:flex;flex-direction:column;gap:18px}
+  @media (min-width:761px){.work-list:not(.pin) .slides{gap:30px}}
+  .pin{padding:0 !important}
+  .tl.pin::before,.tl.pin::after{display:none}
+  .pin .stage{position:sticky;top:0;height:100vh;display:flex;align-items:center}
+  .pin .slides{position:relative;display:block;width:100%;height:min(540px,66vh);z-index:1}
+  .pin .sl{position:absolute !important;inset:0;top:0 !important;margin:0 !important;padding:0 !important;background:none !important;border:0 !important;box-shadow:none !important;opacity:1 !important;transform:none !important;min-height:0;pointer-events:none;overflow:visible}
+  .pin .sl::before,.pin .sl::after{display:none !important}
+  .pin .sl.is-active{pointer-events:auto}
+  .pin .work.sl{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
+  .pin .job.sl{display:flex;flex-direction:column;justify-content:center;right:auto;width:58%}
+  .pin .w-body{order:1}
+  .pin .w-body>*,.pin .job.sl>*{opacity:0;transform:translateY(30px);transition:opacity .55s var(--ease),transform .8s var(--ease)}
+  .pin .sl.is-past .w-body>*,.pin .job.sl.is-past>*{transform:translateY(-30px)}
+  .pin .sl.is-active .w-body>*,.pin .job.sl.is-active>*{opacity:1;transform:none}
+  .pin .sl.is-active .w-body>*:nth-child(2),.pin .job.sl.is-active>*:nth-child(2){transition-delay:.09s}
+  .pin .sl.is-active .w-body>*:nth-child(3),.pin .job.sl.is-active>*:nth-child(3){transition-delay:.18s}
+  .pin .sl.is-active .w-body>*:nth-child(4){transition-delay:.27s}
+  .pin .w-viz{order:2;padding:22px;opacity:0;transform:translateY(46px) scale(.95);transition:opacity .6s var(--ease),transform .9s var(--ease)}
+  .pin .sl.is-past .w-viz{transform:translateY(-46px) scale(.95)}
+  .pin .sl.is-active .w-viz{opacity:1;transform:translateY(calc(var(--lp,0) * -34px)) scale(1)}
+  .pin .w-body h3{font-family:var(--fs);font-weight:600;font-size:clamp(2rem,3.3vw,3rem);line-height:1.1;margin-bottom:18px}
+  .pin .w-body p{font-size:1.06rem;max-width:52ch;margin-bottom:22px}
+  .pin .w-num{font-family:var(--fm);font-weight:500;font-size:1rem;letter-spacing:.1em}
+  .pin .j-meta{flex-direction:column;align-items:flex-start;gap:12px;margin-bottom:18px}
+  .pin .j-date{order:-1;margin-left:0;background:none;border:0;padding:0;color:var(--gold);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase}
+  .pin .j-role{font-family:var(--fs);font-weight:600;font-size:clamp(2rem,3.5vw,3.1rem);line-height:1.08}
+  .pin .j-co{font-size:1.1rem}
+  .pin .job.sl p{font-size:1.08rem;max-width:56ch;margin-bottom:22px}
+  .pin .ring{display:block;position:absolute;right:-3%;top:50%;width:min(560px,44vw);aspect-ratio:1;border-radius:50%;border:1px solid var(--line);border-top-color:var(--gold);border-right-color:var(--violet);transform:translateY(-50%) rotate(calc(var(--sp,0) * 320deg));z-index:0;opacity:.75}
+  .pin .s-label{display:inline-flex;position:absolute;top:96px;left:0}
+  .pin .s-foot{display:flex;position:absolute;left:0;right:0;bottom:34px;align-items:center;gap:18px;font-family:var(--fm);font-size:.78rem;color:var(--text-faint)}
+  .s-foot b{color:var(--gold);font-weight:500}
+  .s-bar{flex:1;height:1px;background:var(--line);position:relative}
+  .s-bar::after{content:"";position:absolute;left:0;top:-1px;height:2px;width:100%;background:linear-gradient(90deg,var(--violet),var(--gold));transform-origin:left;transform:scaleX(var(--sp,0))}
+  .pin .sidx{display:block;position:absolute;right:0;top:50%;transform:translateY(-50%);width:30%;z-index:2}
+  .sidx li{display:grid;grid-template-columns:34px 1fr;gap:2px 10px;padding:13px 0 13px 16px;border-left:1px solid var(--line);cursor:pointer;color:var(--text-faint);transition:color .4s,border-color .4s,padding .4s}
+  .sidx .n{font-family:var(--fm);font-size:.74rem;padding-top:3px}.sidx .t{font-family:var(--fd);font-weight:600;font-size:1rem}.sidx .d{grid-column:2;font-family:var(--fm);font-size:.72rem}
+  .sidx li:hover{color:var(--text-dim)}
+  .sidx li.on{color:var(--text);border-left-color:var(--gold);padding-left:24px}.sidx li.on .n{color:var(--gold)}
   @media (prefers-reduced-motion:reduce){
     *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important}
     .reveal{opacity:1;transform:none}
@@ -300,6 +366,10 @@
         <div class="stat"><div class="n" data-count="400" data-suffix="+"><span>0</span></div><div class="lb">EC2 instances run</div></div>
       </div>
     </div>
+    <div class="term reveal" aria-label="Terminal style summary of my stack">
+      <div class="term-bar"><span class="tb r"></span><span class="tb y"></span><span class="tb g"></span><span class="term-title">taimoor@infra: ~/portfolio</span><span class="term-badge"><i></i>pipeline passing</span></div>
+      <pre class="term-body" id="termBody"></pre>
+    </div>
   </div>
 </section>
 
@@ -327,6 +397,11 @@
         <div class="do-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 18a4 4 0 010-8 5 5 0 019.6-1.5A3.5 3.5 0 0117 18H7z"/><path d="M12 15v-5m0 0l-2 2m2-2l2 2"/></svg></div>
         <h3>Cloud Architecture &amp; Migration</h3>
         <p>Architect and migrate workloads across AWS, Azure, and GCP — scalable, fault-tolerant designs and moving apps to the cloud with low-downtime cutovers.</p>
+      </div>
+      <div class="do-card reveal">
+        <div class="do-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="6" rx="1"/><rect x="14" y="15" width="7" height="6" rx="1"/><path d="M6.5 9v4a2 2 0 002 2H14"/></svg></div>
+        <h3>Solution Design &amp; Migration Planning</h3>
+        <p>Provide architecture solutions, phased migration plans, and clear diagrams — assessing the current setup, designing the target state, and mapping the cutover.</p>
       </div>
       <div class="do-card reveal">
         <div class="do-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 9l-3 3 3 3m8-6l3 3-3 3M13 5l-2 14"/></svg></div>
@@ -412,23 +487,23 @@
       <article class="work reveal">
         <div class="w-viz">
           <svg viewBox="0 0 380 230" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Railway to AWS migration with CI/CD pipeline">
-            <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3b82f6"/><stop offset="1" stop-color="#60a5fa"/></linearGradient></defs>
-            <rect x="18" y="28" width="96" height="48" rx="8" fill="#0e1422" stroke="#26324a"/>
-            <text x="66" y="56" fill="#96a3b8" font-family="monospace" font-size="13" text-anchor="middle">Railway</text>
+            <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4C6FFF"/><stop offset="1" stop-color="#8FA6FF"/></linearGradient></defs>
+            <rect x="18" y="28" width="96" height="48" rx="8" fill="#0f1219" stroke="#232838"/>
+            <text x="66" y="56" fill="#a5a8b3" font-family="monospace" font-size="13" text-anchor="middle">Railway</text>
             <line x1="120" y1="52" x2="250" y2="52" stroke="url(#g1)" stroke-width="2" stroke-dasharray="4 4"/>
             <path d="M245 47 L256 52 L245 57" fill="none" stroke="url(#g1)" stroke-width="2"/>
-            <rect x="258" y="24" width="104" height="56" rx="10" fill="#0e1422" stroke="#3b82f6"/>
+            <rect x="258" y="24" width="104" height="56" rx="10" fill="#0f1219" stroke="#4C6FFF"/>
             <text x="310" y="42" fill="#fff" font-family="monospace" font-size="12" text-anchor="middle">AWS</text>
-            <rect x="270" y="50" width="18" height="20" rx="3" fill="#1a2436" stroke="#2563eb"/>
-            <rect x="294" y="50" width="18" height="20" rx="3" fill="#1a2436" stroke="#2563eb"/>
-            <rect x="318" y="50" width="18" height="20" rx="3" fill="#1a2436" stroke="#2563eb"/>
-            <text x="18" y="124" fill="#647388" font-family="monospace" font-size="11">CI/CD PIPELINE</text>
+            <rect x="270" y="50" width="18" height="20" rx="3" fill="#1b2030" stroke="#2B50E8"/>
+            <rect x="294" y="50" width="18" height="20" rx="3" fill="#1b2030" stroke="#2B50E8"/>
+            <rect x="318" y="50" width="18" height="20" rx="3" fill="#1b2030" stroke="#2B50E8"/>
+            <text x="18" y="124" fill="#6a6f80" font-family="monospace" font-size="11">CI/CD PIPELINE</text>
             <line x1="44" y1="168" x2="336" y2="168" stroke="url(#g1)" stroke-width="2"/>
             <g font-family="monospace" font-size="11" text-anchor="middle">
-              <circle cx="44" cy="168" r="9" fill="#0e1422" stroke="#3b82f6" stroke-width="2"/><text x="44" y="197" fill="#96a3b8">commit</text>
-              <circle cx="142" cy="168" r="9" fill="#0e1422" stroke="#3b82f6" stroke-width="2"/><text x="142" y="197" fill="#96a3b8">build</text>
-              <circle cx="240" cy="168" r="9" fill="#0e1422" stroke="#3b82f6" stroke-width="2"/><text x="240" y="197" fill="#96a3b8">test</text>
-              <circle cx="336" cy="168" r="10" fill="#3b82f6"/><text x="336" y="197" fill="#cdd6e4">deploy</text>
+              <circle cx="44" cy="168" r="9" fill="#0f1219" stroke="#4C6FFF" stroke-width="2"/><text x="44" y="197" fill="#a5a8b3">commit</text>
+              <circle cx="142" cy="168" r="9" fill="#0f1219" stroke="#4C6FFF" stroke-width="2"/><text x="142" y="197" fill="#a5a8b3">build</text>
+              <circle cx="240" cy="168" r="9" fill="#0f1219" stroke="#4C6FFF" stroke-width="2"/><text x="240" y="197" fill="#a5a8b3">test</text>
+              <circle cx="336" cy="168" r="10" fill="#10B981"/><text x="336" y="197" fill="#cdd6e4">deploy</text>
             </g>
           </svg>
         </div>
@@ -442,31 +517,31 @@
       <article class="work reveal">
         <div class="w-viz">
           <svg viewBox="0 0 380 230" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Observability stack with Prometheus, Grafana and New Relic">
-            <defs><linearGradient id="o2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3b82f6"/><stop offset="1" stop-color="#60a5fa"/></linearGradient></defs>
-            <g font-family="monospace" font-size="10" fill="#96a3b8" text-anchor="middle">
-              <rect x="16" y="46" width="78" height="22" rx="5" fill="#0e1422" stroke="#26324a"/><text x="55" y="61">service</text>
-              <rect x="16" y="78" width="78" height="22" rx="5" fill="#0e1422" stroke="#26324a"/><text x="55" y="93">service</text>
-              <rect x="16" y="110" width="78" height="22" rx="5" fill="#0e1422" stroke="#26324a"/><text x="55" y="125">service</text>
+            <defs><linearGradient id="o2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4C6FFF"/><stop offset="1" stop-color="#8FA6FF"/></linearGradient></defs>
+            <g font-family="monospace" font-size="10" fill="#a5a8b3" text-anchor="middle">
+              <rect x="16" y="46" width="78" height="22" rx="5" fill="#0f1219" stroke="#232838"/><text x="55" y="61">service</text>
+              <rect x="16" y="78" width="78" height="22" rx="5" fill="#0f1219" stroke="#232838"/><text x="55" y="93">service</text>
+              <rect x="16" y="110" width="78" height="22" rx="5" fill="#0f1219" stroke="#232838"/><text x="55" y="125">service</text>
             </g>
-            <path d="M94 57 C132 57 140 89 166 89" stroke="#394764" stroke-width="1.5" fill="none"/>
-            <path d="M94 89 L166 89" stroke="#394764" stroke-width="1.5" fill="none"/>
-            <path d="M94 121 C132 121 140 89 166 89" stroke="#394764" stroke-width="1.5" fill="none"/>
-            <circle cx="188" cy="89" r="22" fill="#0e1422" stroke="#3b82f6" stroke-width="2"/>
+            <path d="M94 57 C132 57 140 89 166 89" stroke="#343b52" stroke-width="1.5" fill="none"/>
+            <path d="M94 89 L166 89" stroke="#343b52" stroke-width="1.5" fill="none"/>
+            <path d="M94 121 C132 121 140 89 166 89" stroke="#343b52" stroke-width="1.5" fill="none"/>
+            <circle cx="188" cy="89" r="22" fill="#0f1219" stroke="#4C6FFF" stroke-width="2"/>
             <text x="188" y="93" font-family="monospace" font-size="10" fill="#fff" text-anchor="middle">Prom</text>
             <line x1="210" y1="89" x2="250" y2="78" stroke="url(#o2)" stroke-width="2"/>
             <path d="M246 73 L256 78 L245 82" fill="none" stroke="url(#o2)" stroke-width="2"/>
-            <rect x="252" y="42" width="112" height="78" rx="8" fill="#0e1422" stroke="#26324a"/>
-            <text x="263" y="58" font-family="monospace" font-size="10" fill="#96a3b8">Grafana</text>
-            <rect x="264" y="94" width="12" height="18" rx="2" fill="#2563eb"/>
-            <rect x="282" y="84" width="12" height="28" rx="2" fill="#3b82f6"/>
-            <rect x="300" y="100" width="12" height="12" rx="2" fill="#2563eb"/>
-            <rect x="318" y="78" width="12" height="34" rx="2" fill="#3b82f6"/>
-            <rect x="336" y="90" width="12" height="22" rx="2" fill="#2563eb"/>
-            <rect x="150" y="150" width="96" height="26" rx="13" fill="#0e1422" stroke="#26324a"/>
-            <text x="198" y="167" font-family="monospace" font-size="10" fill="#96a3b8" text-anchor="middle">New Relic</text>
-            <circle cx="300" cy="163" r="15" fill="#0e1422" stroke="#3b82f6"/>
+            <rect x="252" y="42" width="112" height="78" rx="8" fill="#0f1219" stroke="#232838"/>
+            <text x="263" y="58" font-family="monospace" font-size="10" fill="#a5a8b3">Grafana</text>
+            <rect x="264" y="94" width="12" height="18" rx="2" fill="#2B50E8"/>
+            <rect x="282" y="84" width="12" height="28" rx="2" fill="#4C6FFF"/>
+            <rect x="300" y="100" width="12" height="12" rx="2" fill="#2B50E8"/>
+            <rect x="318" y="78" width="12" height="34" rx="2" fill="#4C6FFF"/>
+            <rect x="336" y="90" width="12" height="22" rx="2" fill="#2B50E8"/>
+            <rect x="150" y="150" width="96" height="26" rx="13" fill="#0f1219" stroke="#232838"/>
+            <text x="198" y="167" font-family="monospace" font-size="10" fill="#a5a8b3" text-anchor="middle">New Relic</text>
+            <circle cx="300" cy="163" r="15" fill="#0f1219" stroke="#4C6FFF"/>
             <text x="300" y="168" font-family="monospace" font-size="14" fill="#f26d6d" text-anchor="middle">!</text>
-            <text x="300" y="190" font-family="monospace" font-size="8" fill="#647388" text-anchor="middle">alerts</text>
+            <text x="300" y="190" font-family="monospace" font-size="8" fill="#6a6f80" text-anchor="middle">alerts</text>
           </svg>
         </div>
         <div class="w-body">
@@ -479,19 +554,19 @@
       <article class="work reveal">
         <div class="w-viz">
           <svg viewBox="0 0 380 230" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Organization-wide AWS security with Security Hub, GuardDuty, Inspector and Macie">
-            <defs><linearGradient id="s3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3b82f6"/><stop offset="1" stop-color="#60a5fa"/></linearGradient></defs>
-            <rect x="12" y="16" width="356" height="198" rx="12" fill="none" stroke="#26324a" stroke-dasharray="5 5"/>
-            <text x="26" y="36" font-family="monospace" font-size="10" fill="#647388">AWS ORGANIZATION</text>
-            <path d="M190 58 l34 12 v26 c0 23 -16 35 -34 43 c-18 -8 -34 -20 -34 -43 v-26 z" fill="#0e1422" stroke="url(#s3)" stroke-width="2"/>
+            <defs><linearGradient id="s3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4C6FFF"/><stop offset="1" stop-color="#8FA6FF"/></linearGradient></defs>
+            <rect x="12" y="16" width="356" height="198" rx="12" fill="none" stroke="#232838" stroke-dasharray="5 5"/>
+            <text x="26" y="36" font-family="monospace" font-size="10" fill="#6a6f80">AWS ORGANIZATION</text>
+            <path d="M190 58 l34 12 v26 c0 23 -16 35 -34 43 c-18 -8 -34 -20 -34 -43 v-26 z" fill="#0f1219" stroke="url(#s3)" stroke-width="2"/>
             <text x="190" y="100" font-family="monospace" font-size="9" fill="#fff" text-anchor="middle">Security</text>
             <text x="190" y="112" font-family="monospace" font-size="9" fill="#fff" text-anchor="middle">Hub</text>
-            <g font-family="monospace" font-size="10" fill="#96a3b8" text-anchor="middle">
-              <line x1="120" y1="95" x2="158" y2="95" stroke="#394764" stroke-width="1.5"/>
-              <rect x="40" y="82" width="80" height="26" rx="6" fill="#0e1422" stroke="#26324a"/><text x="80" y="99">GuardDuty</text>
-              <line x1="260" y1="95" x2="222" y2="95" stroke="#394764" stroke-width="1.5"/>
-              <rect x="260" y="82" width="80" height="26" rx="6" fill="#0e1422" stroke="#26324a"/><text x="300" y="99">Inspector</text>
-              <line x1="190" y1="148" x2="190" y2="168" stroke="#394764" stroke-width="1.5"/>
-              <rect x="150" y="168" width="80" height="26" rx="6" fill="#0e1422" stroke="#26324a"/><text x="190" y="185">Macie</text>
+            <g font-family="monospace" font-size="10" fill="#a5a8b3" text-anchor="middle">
+              <line x1="120" y1="95" x2="158" y2="95" stroke="#343b52" stroke-width="1.5"/>
+              <rect x="40" y="82" width="80" height="26" rx="6" fill="#0f1219" stroke="#232838"/><text x="80" y="99">GuardDuty</text>
+              <line x1="260" y1="95" x2="222" y2="95" stroke="#343b52" stroke-width="1.5"/>
+              <rect x="260" y="82" width="80" height="26" rx="6" fill="#0f1219" stroke="#232838"/><text x="300" y="99">Inspector</text>
+              <line x1="190" y1="148" x2="190" y2="168" stroke="#343b52" stroke-width="1.5"/>
+              <rect x="150" y="168" width="80" height="26" rx="6" fill="#0f1219" stroke="#232838"/><text x="190" y="185">Macie</text>
             </g>
           </svg>
         </div>
@@ -505,19 +580,19 @@
       <article class="work reveal">
         <div class="w-viz">
           <svg viewBox="0 0 380 230" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SOC 2 compliance controls mapped to the Trust Services Criteria">
-            <defs><linearGradient id="sc4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3b82f6"/><stop offset="1" stop-color="#60a5fa"/></linearGradient></defs>
-            <g font-family="monospace" font-size="10" fill="#96a3b8">
-              <rect x="16" y="26" width="132" height="30" rx="6" fill="#0e1422" stroke="#26324a"/><text x="30" y="45">Access Control</text>
-              <rect x="16" y="68" width="132" height="30" rx="6" fill="#0e1422" stroke="#26324a"/><text x="30" y="87">Audit Logging</text>
-              <rect x="16" y="110" width="132" height="30" rx="6" fill="#0e1422" stroke="#26324a"/><text x="30" y="129">Encryption</text>
-              <rect x="16" y="152" width="132" height="30" rx="6" fill="#0e1422" stroke="#26324a"/><text x="30" y="171">Monitoring</text>
+            <defs><linearGradient id="sc4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4C6FFF"/><stop offset="1" stop-color="#8FA6FF"/></linearGradient></defs>
+            <g font-family="monospace" font-size="10" fill="#a5a8b3">
+              <rect x="16" y="26" width="132" height="30" rx="6" fill="#0f1219" stroke="#232838"/><text x="30" y="45">Access Control</text>
+              <rect x="16" y="68" width="132" height="30" rx="6" fill="#0f1219" stroke="#232838"/><text x="30" y="87">Audit Logging</text>
+              <rect x="16" y="110" width="132" height="30" rx="6" fill="#0f1219" stroke="#232838"/><text x="30" y="129">Encryption</text>
+              <rect x="16" y="152" width="132" height="30" rx="6" fill="#0f1219" stroke="#232838"/><text x="30" y="171">Monitoring</text>
             </g>
-            <path d="M148 41 C212 41 232 100 266 100" stroke="#394764" stroke-width="1.5" fill="none"/>
-            <path d="M148 83 C212 83 234 100 266 100" stroke="#394764" stroke-width="1.5" fill="none"/>
-            <path d="M148 125 C212 125 234 100 266 100" stroke="#394764" stroke-width="1.5" fill="none"/>
-            <path d="M148 167 C212 167 232 100 266 100" stroke="#394764" stroke-width="1.5" fill="none"/>
-            <path d="M300 58 l34 12 v26 c0 23 -16 35 -34 43 c-18 -8 -34 -20 -34 -43 v-26 z" fill="#0e1422" stroke="url(#sc4)" stroke-width="2"/>
-            <path d="M287 99 l9 9 17 -18" stroke="#3b82f6" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M148 41 C212 41 232 100 266 100" stroke="#343b52" stroke-width="1.5" fill="none"/>
+            <path d="M148 83 C212 83 234 100 266 100" stroke="#343b52" stroke-width="1.5" fill="none"/>
+            <path d="M148 125 C212 125 234 100 266 100" stroke="#343b52" stroke-width="1.5" fill="none"/>
+            <path d="M148 167 C212 167 232 100 266 100" stroke="#343b52" stroke-width="1.5" fill="none"/>
+            <path d="M300 58 l34 12 v26 c0 23 -16 35 -34 43 c-18 -8 -34 -20 -34 -43 v-26 z" fill="#0f1219" stroke="url(#sc4)" stroke-width="2"/>
+            <path d="M287 99 l9 9 17 -18" stroke="#4C6FFF" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
             <text x="300" y="150" font-family="monospace" font-size="11" fill="#fff" text-anchor="middle">SOC 2</text>
           </svg>
         </div>
@@ -689,6 +764,76 @@
   if('IntersectionObserver'in window){const c=new IntersectionObserver((en)=>{en.forEach(e=>{if(e.isIntersecting){run(e.target);c.unobserve(e.target);}});},{threshold:.6});counters.forEach(x=>c.observe(x));}
   else counters.forEach(run);
 
+  /* experience: scroll-driven timeline */
+  const tlEl=document.querySelector('.tl'),jobEls=[...document.querySelectorAll('.job')];
+  function tlUpdate(){if(!tlEl)return;const r=tlEl.getBoundingClientRect(),mark=window.innerHeight*0.62;
+    tlEl.style.setProperty('--p',Math.max(0,Math.min(1,(mark-r.top)/r.height)).toFixed(3));
+    jobEls.forEach(j=>j.classList.toggle('on',j.getBoundingClientRect().top<mark));}
+  window.addEventListener('scroll',tlUpdate,{passive:true});window.addEventListener('resize',tlUpdate);tlUpdate();
+
+  /* terminal */
+  (function(){
+    const body=document.getElementById('termBody');if(!body)return;
+    const LINES=[['cmd','whoami'],['out','taimoor-ali · devops engineer · lahore'],
+      ['cmd','cat stack.yaml'],['kv','cloud:    ','[aws, azure, gcp]'],['kv','ci_cd:    ','[jenkins, github-actions, gitlab-ci, rundeck]'],
+      ['kv','iac:      ','[terraform, cloudformation, ansible]'],['kv','runtime:  ','[kubernetes, docker, helm]'],['kv','observe:  ','[prometheus, grafana, new-relic, elk]'],
+      ['cmd','./pipeline.sh --stage all'],['ok','lint     passed'],['ok','build    passed'],['ok','test     passed'],['ok','deploy   production · healthy']];
+    const span=(c,t)=>{const e=document.createElement('span');if(c)e.className=c;e.textContent=t;return e;};
+    const cur=span('term-cur','');
+    function addLine(l,done){
+      const row=document.createElement('div');body.insertBefore(row,cur.parentNode===body?cur:null);
+      if(l[0]==='cmd'){row.appendChild(span('p','$ '));const c=span('c','');row.appendChild(c);
+        if(reduce){c.textContent=l[1];return done();}
+        let i=0;(function t(){c.textContent=l[1].slice(0,++i);i<l[1].length?setTimeout(t,32):setTimeout(done,220);})();}
+      else{if(l[0]==='kv'){row.appendChild(span('k',l[1]));row.appendChild(span('',l[2]));}
+        else if(l[0]==='ok'){row.appendChild(span('ok','✓ '));row.appendChild(span('',l[1]));}
+        else row.appendChild(span('',l[1]));
+        reduce?done():setTimeout(done,l[0]==='ok'?260:90);}
+    }
+    function run(){let i=0;body.appendChild(cur);(function next(){if(i>=LINES.length){const r=document.createElement('div');r.appendChild(span('p','$ '));r.appendChild(cur);body.appendChild(r);return;}addLine(LINES[i++],next);})();}
+    if('IntersectionObserver'in window){const o=new IntersectionObserver(e=>{if(e[0].isIntersecting){o.disconnect();run();}},{threshold:.3});o.observe(body);}else run();
+  })();
+
+  /* pinned scroll scenes: the page holds still while each item swaps in */
+  function scene(track,items,o){
+    if(!track||!items.length)return;
+    const el=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h)e.textContent=h;return e;};
+    const stage=el('div','stage'),slides=el('div','slides');
+    items.forEach(it=>{it.classList.add('sl');slides.appendChild(it);});
+    const foot=el('div','s-foot'),cnt=el('span'),bar=el('span','s-bar'),nm=el('span');
+    foot.append(cnt,bar,nm);
+    stage.append(el('div','ring'),el('div','eyebrow s-label',o.label),slides,foot);
+    let lis=[];
+    if(o.index){const ul=el('ul','sidx');o.index.forEach((x,i)=>{const li=el('li');li.append(el('span','n',String(i+1).padStart(2,'0')),el('span','t',x[0]),el('span','d',x[1]));
+      li.addEventListener('click',()=>{const top=track.getBoundingClientRect().top+window.scrollY;const per=(track.offsetHeight-window.innerHeight)/items.length;window.scrollTo({top:top+per*i+per*0.5,behavior:'smooth'});});
+      ul.appendChild(li);lis.push(li);});stage.appendChild(ul);}
+    track.appendChild(stage);
+    const mq=window.matchMedia('(min-width:980px) and (min-height:620px)');
+    let on=false,act=-1,tick=false;
+    function update(){tick=false;if(!on)return;
+      const r=track.getBoundingClientRect(),span=r.height-window.innerHeight;
+      const p=Math.max(0,Math.min(1,-r.top/span)),f=p*items.length,a=Math.min(items.length-1,Math.floor(f));
+      stage.style.setProperty('--sp',p.toFixed(4));stage.style.setProperty('--lp',(f-a-0.5).toFixed(3));
+      if(a!==act){act=a;items.forEach((it,i)=>{it.classList.toggle('is-active',i===a);it.classList.toggle('is-past',i<a);});
+        lis.forEach((li,i)=>li.classList.toggle('on',i===a));
+        cnt.innerHTML='<b>'+String(a+1).padStart(2,'0')+'</b> / '+String(items.length).padStart(2,'0');nm.textContent=o.names[a]||'';}
+    }
+    function mode(){on=mq.matches&&!reduce;track.classList.toggle('pin',on);track.style.height=on?'calc(100vh + '+(items.length*o.per)+'vh)':'';
+      if(!on){act=-1;items.forEach(it=>it.classList.remove('is-active','is-past'));}update();}
+    window.addEventListener('scroll',()=>{if(!tick){tick=true;requestAnimationFrame(update);}},{passive:true});
+    window.addEventListener('resize',update);
+    mq.addEventListener?mq.addEventListener('change',mode):mq.addListener(mode);
+    mode();
+  }
+  (function(){
+    const jobs=[...document.querySelectorAll('.tl .job')];
+    const co=j=>(j.querySelector('.j-co')||{}).textContent.replace(/^[\s·]+/,'');
+    scene(document.querySelector('.tl'),jobs,{label:'03 · career',per:70,names:jobs.map(co),
+      index:jobs.map(j=>[co(j),(j.querySelector('.j-date')||{}).textContent])});
+    const works=[...document.querySelectorAll('.work-list .work')];
+    scene(document.querySelector('.work-list'),works,{label:'04 · selected work',per:75,names:works.map(w=>w.querySelector('h3').textContent)});
+  })();
+
   /* scroll-spy */
   const spyIds=['about','do','experience','work','tech','contact'];
   const lmap={};document.querySelectorAll('nav.links a.lk').forEach(a=>lmap[a.dataset.sec]=a);
@@ -726,13 +871,13 @@
     if(ENV)return ENV;
     const c=document.createElement('canvas');c.width=512;c.height=256;const g=c.getContext('2d');
     const grad=g.createLinearGradient(0,0,0,256);
-    grad.addColorStop(0,'#223049');grad.addColorStop(.5,'#334155');grad.addColorStop(1,'#0b0b14');
+    grad.addColorStop(0,'#232838');grad.addColorStop(.5,'#3d4350');grad.addColorStop(1,'#0b0b14');
     g.fillStyle=grad;g.fillRect(0,0,512,256);
     const hi=g.createRadialGradient(350,62,8,350,62,160);
     hi.addColorStop(0,'rgba(255,255,255,0.95)');hi.addColorStop(1,'rgba(255,255,255,0)');
     g.fillStyle=hi;g.fillRect(0,0,512,256);
     const vi=g.createRadialGradient(130,150,6,130,150,130);
-    vi.addColorStop(0,'rgba(96,165,250,0.5)');vi.addColorStop(1,'rgba(96,165,250,0)');
+    vi.addColorStop(0,'rgba(143,166,255,0.5)');vi.addColorStop(1,'rgba(143,166,255,0)');
     g.fillStyle=vi;g.fillRect(0,0,512,256);
     ENV=new THREE.CanvasTexture(c);ENV.mapping=THREE.EquirectangularReflectionMapping;
     if('sRGBEncoding'in THREE)ENV.encoding=THREE.sRGBEncoding;
@@ -806,7 +951,7 @@
     function fallbackGem(){
       const geo=new THREE.IcosahedronGeometry(1.6,1);
       const gem=new THREE.Mesh(geo,new THREE.MeshStandardMaterial({color:0xece8f5,metalness:.1,roughness:.22,flatShading:true,envMap:envTex(),envMapIntensity:.6}));
-      const wire=new THREE.Mesh(geo,new THREE.MeshBasicMaterial({color:0x3b82f6,wireframe:true,transparent:true,opacity:.25}));wire.scale.setScalar(1.04);
+      const wire=new THREE.Mesh(geo,new THREE.MeshBasicMaterial({color:0x4C6FFF,wireframe:true,transparent:true,opacity:.25}));wire.scale.setScalar(1.04);
       rig.add(gem,wire);rig.userData.gem=gem;rig.userData.wire=wire;loaded=true;
     }
     buildModel();
