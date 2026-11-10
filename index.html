@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Taimoor Ali — 3D Developer Portfolio</title>
+<title>Taimoor Ali — DevOps Engineer</title>
 <meta name="description" content="Taimoor Ali — DevOps Engineer. Cloud infrastructure, Kubernetes, CI/CD and security across AWS, Azure and GCP.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -280,7 +280,7 @@
   .pin .job.sl p{font-size:1.08rem;max-width:56ch;margin-bottom:22px}
   .pin .ring{display:block;position:absolute;right:-3%;top:50%;width:min(560px,44vw);aspect-ratio:1;border-radius:50%;border:1px solid var(--line);border-top-color:var(--gold);border-right-color:var(--violet);transform:translateY(-50%) rotate(calc(var(--sp,0) * 320deg));z-index:0;opacity:.75}
   .pin .s-label{display:inline-flex;position:absolute;top:96px;left:0}
-  .pin .s-foot{display:flex;position:absolute;left:0;right:0;bottom:34px;align-items:center;gap:18px;font-family:var(--fm);font-size:.78rem;color:var(--text-faint)}
+  .pin .s-foot{display:flex;position:absolute;left:0;right:84px;bottom:34px;align-items:center;gap:18px;font-family:var(--fm);font-size:.78rem;color:var(--text-faint)}
   .s-foot b{color:var(--gold);font-weight:500}
   .s-bar{flex:1;height:1px;background:var(--line);position:relative}
   .s-bar::after{content:"";position:absolute;left:0;top:-1px;height:2px;width:100%;background:linear-gradient(90deg,var(--violet),var(--gold));transform-origin:left;transform:scaleX(var(--sp,0))}
@@ -289,6 +289,86 @@
   .sidx .n{font-family:var(--fm);font-size:.74rem;padding-top:3px}.sidx .t{font-family:var(--fd);font-weight:600;font-size:1rem}.sidx .d{grid-column:2;font-family:var(--fm);font-size:.72rem}
   .sidx li:hover{color:var(--text-dim)}
   .sidx li.on{color:var(--text);border-left-color:var(--gold);padding-left:24px}.sidx li.on .n{color:var(--gold)}
+  /* ===== nav case ===== */
+  nav.links a.lk,.rez{text-transform:capitalize}
+  /* ===== hero extras ===== */
+  .h-tag{background:linear-gradient(100deg,#4C6FFF 0%,#8FA6FF 38%,#D4B26A 50%,#8FA6FF 62%,#4C6FFF 100%);background-size:260% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:fu .8s var(--ease) .7s forwards,shine 7s linear 1.6s infinite}
+  @keyframes shine{from{background-position:120% 0}to{background-position:-140% 0}}
+  .ticker{position:absolute;left:0;right:0;bottom:0;z-index:2;border-top:1px solid var(--line);background:rgba(10,12,18,.55);backdrop-filter:blur(6px);overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+  .ticker-in{display:flex;align-items:center;gap:26px;width:max-content;padding:14px 0;animation:tick 38s linear infinite;font-family:var(--fm);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-dim);white-space:nowrap}
+  .ticker-in i{font-style:normal;color:var(--gold);font-size:.7rem}
+  @keyframes tick{to{transform:translateX(-50%)}}
+  .hero-3d{cursor:pointer}
+  .bot-say{position:absolute;z-index:3;left:50%;top:4%;transform:translate(-50%,8px) scale(.9);max-width:260px;background:var(--surface);border:1px solid var(--line-2);border-radius:14px 14px 14px 4px;padding:10px 14px;font-family:var(--fm);font-size:.8rem;color:var(--text);box-shadow:0 16px 40px rgba(0,0,0,.5);opacity:0;pointer-events:none;transition:opacity .25s,transform .35s var(--ease);white-space:nowrap}
+  .bot-say.on{opacity:1;transform:translate(-50%,0) scale(1)}
+  /* ===== diagram panels ===== */
+  .w-viz{display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;padding:0;background:radial-gradient(circle at 50% 30%,rgba(76,111,255,.13),transparent 65%),radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px) 0 0/18px 18px,var(--ink-2);box-shadow:0 30px 70px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.05)}
+  .pin .w-viz{padding:0}
+  .vz-bar{display:flex;align-items:center;gap:7px;padding:11px 14px;border-bottom:1px solid var(--line);font-family:var(--fm);font-size:.7rem;color:var(--text-faint);background:rgba(10,12,18,.6)}
+  .vz-bar i{width:9px;height:9px;border-radius:50%;background:var(--line-2)}
+  .vz-bar span{margin-left:8px}
+  .vz-bar b{margin-left:auto;font-weight:500;color:var(--ok);display:inline-flex;align-items:center;gap:6px}
+  .vz-bar b::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--ok);animation:blink 1.4s steps(1) infinite}
+  .w-viz svg{padding:14px 16px 16px;box-sizing:border-box}
+  .w-viz svg .flow{stroke-dasharray:5 7;animation:vflow 1s linear infinite}
+  @keyframes vflow{to{stroke-dashoffset:-24}}
+  .w-viz svg .glow{filter:drop-shadow(0 0 7px rgba(76,111,255,.65))}
+  .w-viz svg .inst{fill:#1b2030;stroke:#4C6FFF;animation:vinst 2.4s ease-in-out infinite}
+  .w-viz svg .i2{animation-delay:.5s}.w-viz svg .i3{animation-delay:1s}
+  @keyframes vinst{0%,100%{fill:#1b2030}50%{fill:rgba(76,111,255,.55)}}
+  .w-viz svg .prog{stroke-dasharray:316;stroke-dashoffset:316;animation:vprog 4s linear infinite}
+  @keyframes vprog{to{stroke-dashoffset:0}}
+  .w-viz svg .nd{fill:#0f1219;stroke:#4C6FFF;stroke-width:2;transform-box:fill-box;transform-origin:center;animation:vnode 4s ease-in-out infinite}
+  .w-viz svg .n2{animation-delay:1.33s}.w-viz svg .n3{animation-delay:2.66s}
+  @keyframes vnode{0%{fill:#4C6FFF;transform:scale(1.25)}22%,100%{fill:#0f1219;transform:scale(1)}}
+  .w-viz svg .ping{fill:none;transform-box:fill-box;transform-origin:center;animation:vping 1.9s ease-out infinite}
+  @keyframes vping{from{transform:scale(.8);opacity:.9}to{transform:scale(1.9);opacity:0}}
+  .w-viz svg .bar{transform-box:fill-box;transform-origin:bottom;animation:vbar 1.7s ease-in-out infinite alternate}
+  .w-viz svg .b2{animation-delay:.3s}.w-viz svg .b3{animation-delay:.6s}.w-viz svg .b4{animation-delay:.15s}.w-viz svg .b5{animation-delay:.45s}
+  @keyframes vbar{from{transform:scaleY(.4)}to{transform:scaleY(1)}}
+  .w-viz svg .spin{transform-box:fill-box;transform-origin:center;animation:vspin 12s linear infinite}
+  @keyframes vspin{to{transform:rotate(360deg)}}
+  .w-viz svg .tick{opacity:0;animation:vtick 5s ease infinite}
+  .w-viz svg .t2{animation-delay:.6s}.w-viz svg .t3{animation-delay:1.2s}.w-viz svg .t4{animation-delay:1.8s}
+  @keyframes vtick{0%,6%{opacity:0}14%,88%{opacity:1}100%{opacity:0}}
+  .w-viz svg .draw{stroke-dasharray:52;stroke-dashoffset:52;animation:vdraw 5s ease infinite}
+  @keyframes vdraw{0%,45%{stroke-dashoffset:52}60%,92%{stroke-dashoffset:0}100%{stroke-dashoffset:52}}
+  /* ===== tool card ===== */
+  .tool-card{position:absolute;z-index:5;width:280px;background:rgba(20,24,34,.94);backdrop-filter:blur(12px);border:1px solid var(--line-2);border-radius:14px;padding:18px 18px 16px;box-shadow:0 24px 60px rgba(0,0,0,.55);opacity:0;transform:translateY(10px) scale(.96);pointer-events:none;transition:opacity .25s,transform .3s var(--ease)}
+  .tool-card.on{opacity:1;transform:none;pointer-events:auto}
+  .tool-card::before{content:"";position:absolute;inset:0 0 auto 0;height:2px;border-radius:14px 14px 0 0;background:linear-gradient(90deg,var(--violet),var(--gold))}
+  .tc-cat{font-family:var(--fm);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+  .tool-card h4{font-family:var(--fs);font-weight:600;font-size:1.35rem;margin-bottom:8px}
+  .tool-card p{color:var(--text-dim);font-size:.9rem;line-height:1.55}
+  .tc-x,.inq-tx,.inq-close{background:none;border:0;color:var(--text-faint);font-size:1.25rem;line-height:1;cursor:pointer}
+  .tc-x{position:absolute;top:8px;right:10px}
+  /* ===== inquiry widget ===== */
+  .inq{position:fixed;right:22px;bottom:22px;z-index:600;font-family:var(--fb)}
+  .inq-fab{width:58px;height:58px;border-radius:50%;border:0;cursor:pointer;background:var(--grad);color:#0A0C12;display:grid;place-items:center;box-shadow:0 14px 34px rgba(76,111,255,.45);transition:transform .25s var(--ease);position:relative}
+  .inq-fab:hover{transform:translateY(-3px) scale(1.04)}
+  .inq-fab i{position:absolute;top:2px;right:2px;width:12px;height:12px;border-radius:50%;background:var(--gold);border:2px solid var(--ink)}
+  .inq-tease,.inq-panel{position:absolute;right:0;bottom:72px;background:var(--surface);border:1px solid var(--line-2);box-shadow:0 30px 80px rgba(0,0,0,.6);opacity:0;pointer-events:none;transition:opacity .25s,transform .35s var(--ease)}
+  .inq-tease{width:230px;border-radius:14px 14px 4px 14px;padding:14px 34px 14px 16px;font-size:.88rem;color:var(--text-dim);cursor:pointer;transform:translateY(10px)}
+  .inq-tease b{display:block;color:var(--text);font-weight:600;margin-top:2px}
+  .inq-tx{position:absolute;top:6px;right:8px}
+  .inq-panel{width:min(360px,calc(100vw - 32px));border-radius:18px;overflow:hidden;transform:translateY(16px) scale(.96);transform-origin:bottom right}
+  .inq-tease.on,.inq-panel.on{opacity:1;transform:none;pointer-events:auto}
+  .inq-head{display:flex;align-items:center;gap:12px;padding:16px;background:linear-gradient(120deg,rgba(76,111,255,.24),rgba(212,178,106,.12));border-bottom:1px solid var(--line)}
+  .inq-av{width:36px;height:36px;border-radius:50%;background:var(--grad);color:#0A0C12;display:grid;place-items:center;font-family:var(--fd);font-weight:800;font-size:.8rem;flex-shrink:0}
+  .inq-head strong{display:block;font-family:var(--fd);font-size:.95rem}.inq-head small{color:var(--text-dim);font-size:.74rem}
+  .inq-close{margin-left:auto}
+  .inq-body{padding:16px;max-height:min(70vh,520px);overflow:auto}
+  .inq-msg{background:var(--ink-2);border:1px solid var(--line);border-radius:4px 14px 14px 14px;padding:11px 13px;font-size:.88rem;color:var(--text-dim);margin-bottom:14px}
+  #inqForm{display:grid;gap:10px}
+  #inqForm input,#inqForm select,#inqForm textarea{width:100%;background:var(--ink-2);border:1px solid var(--line);border-radius:10px;padding:11px 12px;color:var(--text);font:inherit;font-size:.9rem;outline:none;resize:vertical}
+  #inqForm input:focus,#inqForm select:focus,#inqForm textarea:focus{border-color:var(--violet)}
+  #inqForm .bad{border-color:#EF4444}
+  #inqForm .inq-hp{position:absolute;left:-9999px;width:1px}
+  .inq-send{background:var(--grad);color:#0A0C12;border:0;border-radius:10px;padding:12px;font-family:var(--fm);font-weight:600;font-size:.88rem;cursor:pointer}
+  .inq-send:disabled{opacity:.6;cursor:default}
+  .inq-note{font-size:.78rem;color:#f2a3a3;min-height:1em}.inq-note a{color:var(--gold);text-decoration:underline}
+  .inq-done{display:none;text-align:center;padding:26px 10px}.inq-done b{display:block;font-family:var(--fs);font-size:1.3rem;margin-bottom:6px}.inq-done span{color:var(--text-dim);font-size:.9rem}
+  .inq.sent #inqForm,.inq.sent .inq-msg{display:none}.inq.sent .inq-done{display:block}
   @media (prefers-reduced-motion:reduce){
     *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important}
     .reveal{opacity:1;transform:none}
@@ -330,7 +410,7 @@
     <div class="hero-in">
       <div class="hero-copy">
         <div class="avail"><span class="dot"></span><b>Available</b> · DevOps &amp; Platform Engineering</div>
-        <div class="h-eye">taimoor@infra:~$ whoami<span class="c">_</span></div>
+        <div class="h-eye">taimoor@infra:~$ ./introduce.sh<span class="c">_</span></div>
         <h1 class="hname" id="hname">
           <span class="l" style="animation-delay:.2s">T</span><span class="l" style="animation-delay:.24s">a</span><span class="l" style="animation-delay:.28s">i</span><span class="l" style="animation-delay:.32s">m</span><span class="l" style="animation-delay:.36s">o</span><span class="l" style="animation-delay:.40s">o</span><span class="l" style="animation-delay:.44s">r</span> <span class="l" style="animation-delay:.5s">A</span><span class="l" style="animation-delay:.54s">l</span><span class="l" style="animation-delay:.58s">i</span>
         </h1>
@@ -342,10 +422,10 @@
           <a href="#contact" class="btn gh">Get in touch</a>
         </div>
       </div>
-      <div class="hero-3d"><canvas id="heroCanvas"></canvas></div>
+      <div class="hero-3d"><div class="bot-say" id="botSay"></div><canvas id="heroCanvas"></canvas></div>
     </div>
   </div>
-  <a href="#about" class="scrollh" aria-label="Scroll down">SCROLL<span class="bar"></span></a>
+  <div class="ticker" aria-hidden="true"><div class="ticker-in"><span>CI/CD</span><i>✦</i><span>Kubernetes</span><i>✦</i><span>Terraform</span><i>✦</i><span>AWS</span><i>✦</i><span>Docker</span><i>✦</i><span>Ansible</span><i>✦</i><span>Jenkins</span><i>✦</i><span>GitHub Actions</span><i>✦</i><span>Prometheus</span><i>✦</i><span>Grafana</span><i>✦</i><span>Cloud Security</span><i>✦</i><span>SOC 2</span><i>✦</i><span>CI/CD</span><i>✦</i><span>Kubernetes</span><i>✦</i><span>Terraform</span><i>✦</i><span>AWS</span><i>✦</i><span>Docker</span><i>✦</i><span>Ansible</span><i>✦</i><span>Jenkins</span><i>✦</i><span>GitHub Actions</span><i>✦</i><span>Prometheus</span><i>✦</i><span>Grafana</span><i>✦</i><span>Cloud Security</span><i>✦</i><span>SOC 2</span><i>✦</i></div></div>
 </section>
 
 <!-- ABOUT -->
@@ -395,8 +475,8 @@
       </div>
       <div class="do-card reveal">
         <div class="do-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 18a4 4 0 010-8 5 5 0 019.6-1.5A3.5 3.5 0 0117 18H7z"/><path d="M12 15v-5m0 0l-2 2m2-2l2 2"/></svg></div>
-        <h3>Cloud Architecture &amp; Migration</h3>
-        <p>Architect and migrate workloads across AWS, Azure, and GCP — scalable, fault-tolerant designs and moving apps to the cloud with low-downtime cutovers.</p>
+        <h3>Cloud Migration</h3>
+        <p>Move workloads onto AWS, Azure, and GCP — re-architecting them for scale and fault tolerance, with low-downtime cutovers.</p>
       </div>
       <div class="do-card reveal">
         <div class="do-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="6" rx="1"/><rect x="14" y="15" width="7" height="6" rx="1"/><path d="M6.5 9v4a2 2 0 002 2H14"/></svg></div>
@@ -438,7 +518,7 @@
     <div class="s-head reveal">
       <div class="eyebrow">03 · career</div>
       <h2 class="s-title">Experience</h2>
-      <p class="s-sub">Six roles across DevOps, data, and web — each one adding a layer to how I run systems at scale.</p>
+      <p class="s-sub">Six roles, most recent first.</p>
     </div>
     <div class="tl">
       <div class="job cur reveal">
@@ -486,26 +566,22 @@
     <div class="work-list">
       <article class="work reveal">
         <div class="w-viz">
-          <svg viewBox="0 0 380 230" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Railway to AWS migration with CI/CD pipeline">
-            <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4C6FFF"/><stop offset="1" stop-color="#8FA6FF"/></linearGradient></defs>
-            <rect x="18" y="28" width="96" height="48" rx="8" fill="#0f1219" stroke="#232838"/>
-            <text x="66" y="56" fill="#a5a8b3" font-family="monospace" font-size="13" text-anchor="middle">Railway</text>
-            <line x1="120" y1="52" x2="250" y2="52" stroke="url(#g1)" stroke-width="2" stroke-dasharray="4 4"/>
-            <path d="M245 47 L256 52 L245 57" fill="none" stroke="url(#g1)" stroke-width="2"/>
-            <rect x="258" y="24" width="104" height="56" rx="10" fill="#0f1219" stroke="#4C6FFF"/>
-            <text x="310" y="42" fill="#fff" font-family="monospace" font-size="12" text-anchor="middle">AWS</text>
-            <rect x="270" y="50" width="18" height="20" rx="3" fill="#1b2030" stroke="#2B50E8"/>
-            <rect x="294" y="50" width="18" height="20" rx="3" fill="#1b2030" stroke="#2B50E8"/>
-            <rect x="318" y="50" width="18" height="20" rx="3" fill="#1b2030" stroke="#2B50E8"/>
-            <text x="18" y="124" fill="#6a6f80" font-family="monospace" font-size="11">CI/CD PIPELINE</text>
-            <line x1="44" y1="168" x2="336" y2="168" stroke="url(#g1)" stroke-width="2"/>
-            <g font-family="monospace" font-size="11" text-anchor="middle">
-              <circle cx="44" cy="168" r="9" fill="#0f1219" stroke="#4C6FFF" stroke-width="2"/><text x="44" y="197" fill="#a5a8b3">commit</text>
-              <circle cx="142" cy="168" r="9" fill="#0f1219" stroke="#4C6FFF" stroke-width="2"/><text x="142" y="197" fill="#a5a8b3">build</text>
-              <circle cx="240" cy="168" r="9" fill="#0f1219" stroke="#4C6FFF" stroke-width="2"/><text x="240" y="197" fill="#a5a8b3">test</text>
-              <circle cx="336" cy="168" r="10" fill="#10B981"/><text x="336" y="197" fill="#cdd6e4">deploy</text>
-            </g>
-          </svg>
+          <div class="vz-bar"><i></i><i></i><i></i><span>migration.flow</span><b>live</b></div>
+          <svg viewBox="0 0 420 250" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Animated diagram: migrating from Railway to AWS with a CI/CD pipeline"><defs><linearGradient id="m1" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4C6FFF"/><stop offset="1" stop-color="#D4B26A"/></linearGradient></defs>
+<g font-family="monospace">
+<rect x="18" y="34" width="112" height="62" rx="10" fill="#0f1219" stroke="#2c3348"/><text x="74" y="62" fill="#F2EEE6" font-size="13" text-anchor="middle">Railway</text><text x="74" y="80" fill="#6a6f80" font-size="9" text-anchor="middle">source</text>
+<path class="flow" d="M132 65 H286" stroke="url(#m1)" stroke-width="2"/><circle r="4.5" fill="#D4B26A"><animateMotion dur="2.4s" repeatCount="indefinite" path="M132 65 H286"/></circle>
+<text x="209" y="54" fill="#6a6f80" font-size="9" text-anchor="middle">migrate</text>
+<rect class="glow" x="290" y="24" width="112" height="84" rx="12" fill="#0f1219" stroke="#4C6FFF"/><text x="346" y="46" fill="#F2EEE6" font-size="13" text-anchor="middle">AWS</text>
+<rect class="inst" x="304" y="56" width="22" height="26" rx="4"/><rect class="inst i2" x="335" y="56" width="22" height="26" rx="4"/><rect class="inst i3" x="366" y="56" width="22" height="26" rx="4"/>
+<text x="346" y="99" fill="#6a6f80" font-size="8" text-anchor="middle">auto scaling</text>
+<text x="18" y="148" fill="#6a6f80" font-size="10" letter-spacing="1.5">CI/CD PIPELINE</text>
+<line x1="52" y1="190" x2="368" y2="190" stroke="#2c3348" stroke-width="2"/><line class="prog" x1="52" y1="190" x2="368" y2="190" stroke="url(#m1)" stroke-width="2"/>
+<circle class="nd" cx="52" cy="190" r="11"/><circle class="nd n2" cx="157" cy="190" r="11"/><circle class="nd n3" cx="263" cy="190" r="11"/>
+<circle class="ping" cx="368" cy="190" r="11" stroke="#10B981" stroke-width="1.5"/><circle cx="368" cy="190" r="11" fill="#10B981"/><path d="M362.5 190.5 l4 4 7.5 -8.5" stroke="#0A0C12" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle r="3.5" fill="#F2EEE6"><animateMotion dur="4s" repeatCount="indefinite" path="M52 190 H357"/></circle>
+<g font-size="10" fill="#a5a8b3" text-anchor="middle"><text x="52" y="220">commit</text><text x="157" y="220">build</text><text x="263" y="220">test</text><text x="368" y="220" fill="#F2EEE6">deploy</text></g>
+</g></svg>
         </div>
         <div class="w-body">
           <div class="w-head"><span class="w-num">01</span><span class="w-cat">Cloud Migration · CI/CD</span></div>
@@ -516,33 +592,20 @@
       </article>
       <article class="work reveal">
         <div class="w-viz">
-          <svg viewBox="0 0 380 230" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Observability stack with Prometheus, Grafana and New Relic">
-            <defs><linearGradient id="o2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4C6FFF"/><stop offset="1" stop-color="#8FA6FF"/></linearGradient></defs>
-            <g font-family="monospace" font-size="10" fill="#a5a8b3" text-anchor="middle">
-              <rect x="16" y="46" width="78" height="22" rx="5" fill="#0f1219" stroke="#232838"/><text x="55" y="61">service</text>
-              <rect x="16" y="78" width="78" height="22" rx="5" fill="#0f1219" stroke="#232838"/><text x="55" y="93">service</text>
-              <rect x="16" y="110" width="78" height="22" rx="5" fill="#0f1219" stroke="#232838"/><text x="55" y="125">service</text>
-            </g>
-            <path d="M94 57 C132 57 140 89 166 89" stroke="#343b52" stroke-width="1.5" fill="none"/>
-            <path d="M94 89 L166 89" stroke="#343b52" stroke-width="1.5" fill="none"/>
-            <path d="M94 121 C132 121 140 89 166 89" stroke="#343b52" stroke-width="1.5" fill="none"/>
-            <circle cx="188" cy="89" r="22" fill="#0f1219" stroke="#4C6FFF" stroke-width="2"/>
-            <text x="188" y="93" font-family="monospace" font-size="10" fill="#fff" text-anchor="middle">Prom</text>
-            <line x1="210" y1="89" x2="250" y2="78" stroke="url(#o2)" stroke-width="2"/>
-            <path d="M246 73 L256 78 L245 82" fill="none" stroke="url(#o2)" stroke-width="2"/>
-            <rect x="252" y="42" width="112" height="78" rx="8" fill="#0f1219" stroke="#232838"/>
-            <text x="263" y="58" font-family="monospace" font-size="10" fill="#a5a8b3">Grafana</text>
-            <rect x="264" y="94" width="12" height="18" rx="2" fill="#2B50E8"/>
-            <rect x="282" y="84" width="12" height="28" rx="2" fill="#4C6FFF"/>
-            <rect x="300" y="100" width="12" height="12" rx="2" fill="#2B50E8"/>
-            <rect x="318" y="78" width="12" height="34" rx="2" fill="#4C6FFF"/>
-            <rect x="336" y="90" width="12" height="22" rx="2" fill="#2B50E8"/>
-            <rect x="150" y="150" width="96" height="26" rx="13" fill="#0f1219" stroke="#232838"/>
-            <text x="198" y="167" font-family="monospace" font-size="10" fill="#a5a8b3" text-anchor="middle">New Relic</text>
-            <circle cx="300" cy="163" r="15" fill="#0f1219" stroke="#4C6FFF"/>
-            <text x="300" y="168" font-family="monospace" font-size="14" fill="#f26d6d" text-anchor="middle">!</text>
-            <text x="300" y="190" font-family="monospace" font-size="8" fill="#6a6f80" text-anchor="middle">alerts</text>
-          </svg>
+          <div class="vz-bar"><i></i><i></i><i></i><span>observability.stack</span><b>live</b></div>
+          <svg viewBox="0 0 420 250" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Animated diagram: services sending metrics to Prometheus, Grafana dashboards, New Relic and alerts"><defs><linearGradient id="m2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4C6FFF"/><stop offset="1" stop-color="#D4B26A"/></linearGradient></defs>
+<g font-family="monospace">
+<g font-size="10" fill="#a5a8b3" text-anchor="middle"><rect x="16" y="48" width="84" height="26" rx="6" fill="#0f1219" stroke="#2c3348"/><text x="58" y="65">service</text><rect x="16" y="88" width="84" height="26" rx="6" fill="#0f1219" stroke="#2c3348"/><text x="58" y="105">service</text><rect x="16" y="128" width="84" height="26" rx="6" fill="#0f1219" stroke="#2c3348"/><text x="58" y="145">service</text></g>
+<path class="flow" d="M100 61 C150 61 150 101 186 101" stroke="#4C6FFF" stroke-width="1.6"/><path class="flow" d="M100 101 H186" stroke="#4C6FFF" stroke-width="1.6"/><path class="flow" d="M100 141 C150 141 150 101 186 101" stroke="#4C6FFF" stroke-width="1.6"/>
+<circle class="ping" cx="210" cy="101" r="24" stroke="#4C6FFF" stroke-width="1.5"/><circle class="glow" cx="210" cy="101" r="24" fill="#0f1219" stroke="#4C6FFF" stroke-width="2"/><text x="210" y="99" fill="#F2EEE6" font-size="10" text-anchor="middle">Prom</text><text x="210" y="111" fill="#6a6f80" font-size="7" text-anchor="middle">metrics</text>
+<path class="flow" d="M234 101 H276" stroke="url(#m2)" stroke-width="2"/>
+<rect x="278" y="40" width="126" height="104" rx="10" fill="#0f1219" stroke="#2c3348"/><text x="290" y="59" fill="#a5a8b3" font-size="10">Grafana</text><circle class="ping" cx="391" cy="55" r="4" fill="#10B981"/><circle cx="391" cy="55" r="3" fill="#10B981"/>
+<rect class="bar" x="292" y="104" width="13" height="28" rx="2" fill="#4C6FFF"/><rect class="bar b2" x="313" y="90" width="13" height="42" rx="2" fill="#8FA6FF"/><rect class="bar b3" x="334" y="110" width="13" height="22" rx="2" fill="#4C6FFF"/><rect class="bar b4" x="355" y="82" width="13" height="50" rx="2" fill="#D4B26A"/><rect class="bar b5" x="376" y="98" width="13" height="34" rx="2" fill="#8FA6FF"/>
+<path class="flow" d="M210 125 V178" stroke="#4C6FFF" stroke-width="1.6"/>
+<rect x="146" y="178" width="128" height="30" rx="15" fill="#0f1219" stroke="#2c3348"/><text x="210" y="197" fill="#a5a8b3" font-size="10" text-anchor="middle">New Relic · APM</text>
+<path class="flow" d="M274 193 H320" stroke="#D4B26A" stroke-width="1.6"/>
+<circle class="ping" cx="338" cy="193" r="16" stroke="#EF4444" stroke-width="1.5"/><circle cx="338" cy="193" r="16" fill="#0f1219" stroke="#D4B26A" stroke-width="1.5"/><text x="338" y="198" fill="#D4B26A" font-size="14" text-anchor="middle">!</text><text x="338" y="226" fill="#6a6f80" font-size="8" text-anchor="middle">alerts</text>
+</g></svg>
         </div>
         <div class="w-body">
           <div class="w-head"><span class="w-num">02</span><span class="w-cat">Monitoring · Observability</span></div>
@@ -553,22 +616,19 @@
       </article>
       <article class="work reveal">
         <div class="w-viz">
-          <svg viewBox="0 0 380 230" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Organization-wide AWS security with Security Hub, GuardDuty, Inspector and Macie">
-            <defs><linearGradient id="s3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4C6FFF"/><stop offset="1" stop-color="#8FA6FF"/></linearGradient></defs>
-            <rect x="12" y="16" width="356" height="198" rx="12" fill="none" stroke="#232838" stroke-dasharray="5 5"/>
-            <text x="26" y="36" font-family="monospace" font-size="10" fill="#6a6f80">AWS ORGANIZATION</text>
-            <path d="M190 58 l34 12 v26 c0 23 -16 35 -34 43 c-18 -8 -34 -20 -34 -43 v-26 z" fill="#0f1219" stroke="url(#s3)" stroke-width="2"/>
-            <text x="190" y="100" font-family="monospace" font-size="9" fill="#fff" text-anchor="middle">Security</text>
-            <text x="190" y="112" font-family="monospace" font-size="9" fill="#fff" text-anchor="middle">Hub</text>
-            <g font-family="monospace" font-size="10" fill="#a5a8b3" text-anchor="middle">
-              <line x1="120" y1="95" x2="158" y2="95" stroke="#343b52" stroke-width="1.5"/>
-              <rect x="40" y="82" width="80" height="26" rx="6" fill="#0f1219" stroke="#232838"/><text x="80" y="99">GuardDuty</text>
-              <line x1="260" y1="95" x2="222" y2="95" stroke="#343b52" stroke-width="1.5"/>
-              <rect x="260" y="82" width="80" height="26" rx="6" fill="#0f1219" stroke="#232838"/><text x="300" y="99">Inspector</text>
-              <line x1="190" y1="148" x2="190" y2="168" stroke="#343b52" stroke-width="1.5"/>
-              <rect x="150" y="168" width="80" height="26" rx="6" fill="#0f1219" stroke="#232838"/><text x="190" y="185">Macie</text>
-            </g>
-          </svg>
+          <div class="vz-bar"><i></i><i></i><i></i><span>security.org</span><b>live</b></div>
+          <svg viewBox="0 0 420 250" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Animated diagram: organization-wide AWS security with Security Hub, GuardDuty, Inspector and Macie"><defs><linearGradient id="m3" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4C6FFF"/><stop offset="1" stop-color="#D4B26A"/></linearGradient></defs>
+<g font-family="monospace">
+<rect x="12" y="14" width="396" height="222" rx="14" stroke="#2c3348" stroke-dasharray="5 6"/><text x="28" y="36" fill="#6a6f80" font-size="10" letter-spacing="1.5">AWS ORGANIZATION</text>
+<circle class="spin" cx="210" cy="117" r="64" stroke="#4C6FFF" stroke-width="1.4" stroke-dasharray="3 11" opacity=".7"/>
+<path class="glow" d="M210 68 l40 14 v30 c0 27 -19 41 -40 50 c-21 -9 -40 -23 -40 -50 v-30 z" fill="#0f1219" stroke="url(#m3)" stroke-width="2"/>
+<text x="210" y="112" fill="#F2EEE6" font-size="10" text-anchor="middle">Security</text><text x="210" y="126" fill="#F2EEE6" font-size="10" text-anchor="middle">Hub</text>
+<g text-anchor="middle"><rect x="24" y="98" width="100" height="38" rx="8" fill="#0f1219" stroke="#2c3348"/><text x="74" y="114" fill="#a5a8b3" font-size="10">GuardDuty</text><text x="74" y="127" fill="#6a6f80" font-size="7">threats</text>
+<rect x="296" y="98" width="100" height="38" rx="8" fill="#0f1219" stroke="#2c3348"/><text x="346" y="114" fill="#a5a8b3" font-size="10">Inspector</text><text x="346" y="127" fill="#6a6f80" font-size="7">vulnerabilities</text>
+<rect x="160" y="190" width="100" height="36" rx="8" fill="#0f1219" stroke="#2c3348"/><text x="210" y="205" fill="#a5a8b3" font-size="10">Macie</text><text x="210" y="218" fill="#6a6f80" font-size="7">sensitive data</text></g>
+<path class="flow" d="M124 117 H168" stroke="#4C6FFF" stroke-width="1.6"/><path class="flow" d="M296 117 H252" stroke="#4C6FFF" stroke-width="1.6"/><path class="flow" d="M210 190 V164" stroke="#4C6FFF" stroke-width="1.6"/>
+<circle r="3.5" fill="#D4B26A"><animateMotion dur="1.8s" repeatCount="indefinite" path="M124 117 H168"/></circle><circle r="3.5" fill="#D4B26A"><animateMotion dur="2.2s" repeatCount="indefinite" path="M296 117 H252"/></circle><circle r="3.5" fill="#D4B26A"><animateMotion dur="2s" repeatCount="indefinite" path="M210 190 V164"/></circle>
+</g></svg>
         </div>
         <div class="w-body">
           <div class="w-head"><span class="w-num">03</span><span class="w-cat">Cloud Security · Compliance</span></div>
@@ -579,22 +639,11 @@
       </article>
       <article class="work reveal">
         <div class="w-viz">
-          <svg viewBox="0 0 380 230" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SOC 2 compliance controls mapped to the Trust Services Criteria">
-            <defs><linearGradient id="sc4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4C6FFF"/><stop offset="1" stop-color="#8FA6FF"/></linearGradient></defs>
-            <g font-family="monospace" font-size="10" fill="#a5a8b3">
-              <rect x="16" y="26" width="132" height="30" rx="6" fill="#0f1219" stroke="#232838"/><text x="30" y="45">Access Control</text>
-              <rect x="16" y="68" width="132" height="30" rx="6" fill="#0f1219" stroke="#232838"/><text x="30" y="87">Audit Logging</text>
-              <rect x="16" y="110" width="132" height="30" rx="6" fill="#0f1219" stroke="#232838"/><text x="30" y="129">Encryption</text>
-              <rect x="16" y="152" width="132" height="30" rx="6" fill="#0f1219" stroke="#232838"/><text x="30" y="171">Monitoring</text>
-            </g>
-            <path d="M148 41 C212 41 232 100 266 100" stroke="#343b52" stroke-width="1.5" fill="none"/>
-            <path d="M148 83 C212 83 234 100 266 100" stroke="#343b52" stroke-width="1.5" fill="none"/>
-            <path d="M148 125 C212 125 234 100 266 100" stroke="#343b52" stroke-width="1.5" fill="none"/>
-            <path d="M148 167 C212 167 232 100 266 100" stroke="#343b52" stroke-width="1.5" fill="none"/>
-            <path d="M300 58 l34 12 v26 c0 23 -16 35 -34 43 c-18 -8 -34 -20 -34 -43 v-26 z" fill="#0f1219" stroke="url(#sc4)" stroke-width="2"/>
-            <path d="M287 99 l9 9 17 -18" stroke="#4C6FFF" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-            <text x="300" y="150" font-family="monospace" font-size="11" fill="#fff" text-anchor="middle">SOC 2</text>
-          </svg>
+          <div class="vz-bar"><i></i><i></i><i></i><span>soc2.controls</span><b>live</b></div>
+          <svg viewBox="0 0 420 250" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Animated diagram: SOC 2 controls feeding the Trust Services Criteria"><defs><linearGradient id="m4" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4C6FFF"/><stop offset="1" stop-color="#D4B26A"/></linearGradient></defs><g font-family="monospace"><rect x="16" y="26" width="152" height="34" rx="8" fill="#0f1219" stroke="#2c3348"/><circle cx="36" cy="43" r="8" stroke="#2c3348"/><path class="tick t1" d="M32 43 l3 3 6 -7" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><text x="52" y="47" fill="#a5a8b3" font-size="10">Access Control</text><rect x="16" y="76" width="152" height="34" rx="8" fill="#0f1219" stroke="#2c3348"/><circle cx="36" cy="93" r="8" stroke="#2c3348"/><path class="tick t2" d="M32 93 l3 3 6 -7" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><text x="52" y="97" fill="#a5a8b3" font-size="10">Audit Logging</text><rect x="16" y="126" width="152" height="34" rx="8" fill="#0f1219" stroke="#2c3348"/><circle cx="36" cy="143" r="8" stroke="#2c3348"/><path class="tick t3" d="M32 143 l3 3 6 -7" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><text x="52" y="147" fill="#a5a8b3" font-size="10">Encryption</text><rect x="16" y="176" width="152" height="34" rx="8" fill="#0f1219" stroke="#2c3348"/><circle cx="36" cy="193" r="8" stroke="#2c3348"/><path class="tick t4" d="M32 193 l3 3 6 -7" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><text x="52" y="197" fill="#a5a8b3" font-size="10">Monitoring</text><path class="flow" d="M168 43 C232 43 244 121 288 121" stroke="#4C6FFF" stroke-width="1.5"/><path class="flow" d="M168 93 C232 93 244 121 288 121" stroke="#4C6FFF" stroke-width="1.5"/><path class="flow" d="M168 143 C232 143 244 121 288 121" stroke="#4C6FFF" stroke-width="1.5"/><path class="flow" d="M168 193 C232 193 244 121 288 121" stroke="#4C6FFF" stroke-width="1.5"/>
+<path class="glow" d="M330 72 l40 14 v30 c0 27 -19 41 -40 50 c-21 -9 -40 -23 -40 -50 v-30 z" fill="#0f1219" stroke="url(#m4)" stroke-width="2"/>
+<path class="draw" d="M314 121 l11 11 21 -24" stroke="#D4B26A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="330" y="192" fill="#F2EEE6" font-size="12" text-anchor="middle">SOC 2</text><text x="330" y="207" fill="#6a6f80" font-size="8" text-anchor="middle">Trust Services Criteria</text></g></svg>
         </div>
         <div class="w-body">
           <div class="w-head"><span class="w-num">04</span><span class="w-cat">Compliance · Audit</span></div>
@@ -616,7 +665,8 @@
         <h2 class="s-title">My Tech Stack</h2>
       </div>
       <canvas id="techCanvas"></canvas>
-      <div class="tech-hint">drag / hover to explore →</div>
+      <div class="tool-card" id="toolCard"><button class="tc-x" aria-label="Close">×</button><div class="tc-cat"></div><h4></h4><p></p></div>
+      <div class="tech-hint">hover · click a bubble →</div>
     </div>
 
     <div class="tech-cats">
@@ -704,6 +754,27 @@
     <button class="toptop" id="toTop">↑ back to top</button>
   </div>
 </footer>
+
+<div class="inq" id="inq">
+  <div class="inq-tease" id="inqTease"><button class="inq-tx" aria-label="Dismiss">×</button>Have a project in mind?<b>Tell me about it →</b></div>
+  <div class="inq-panel" id="inqPanel" role="dialog" aria-label="Project inquiry">
+    <div class="inq-head"><span class="inq-av">TA</span><div><strong>Start a project inquiry</strong><small>I'll reply by email</small></div><button class="inq-close" id="inqClose" aria-label="Close">×</button></div>
+    <div class="inq-body">
+      <p class="inq-msg">Hi, I'm Taimoor. Tell me a little about your project and I'll get back to you by email.</p>
+      <form id="inqForm" novalidate>
+        <input name="name" placeholder="Your name" autocomplete="name">
+        <input name="email" type="email" placeholder="Your email" autocomplete="email">
+        <select name="type"><option value="">What do you need?</option><option>CI/CD pipeline</option><option>Cloud migration</option><option>Architecture &amp; diagrams</option><option>Kubernetes / containers</option><option>Monitoring &amp; security</option><option>Something else</option></select>
+        <textarea name="message" rows="4" placeholder="Describe your project…"></textarea>
+        <input name="_honey" tabindex="-1" autocomplete="off" class="inq-hp" aria-hidden="true">
+        <button type="submit" class="inq-send">Send inquiry</button>
+        <p class="inq-note" id="inqNote"></p>
+      </form>
+      <div class="inq-done"><b>Thanks, it's sent.</b><span>I'll reply to your email soon.</span></div>
+    </div>
+  </div>
+  <button class="inq-fab" id="inqFab" aria-label="Open project inquiry" aria-expanded="false"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 01-11.6 7.1L4 20l1-4.6A8 8 0 1121 12z"/><path d="M9 11h6M9 14h4"/></svg><i></i></button>
+</div>
 
 <script src="three.min.js"></script>
 <script src="GLTFLoader.js"></script>
@@ -834,6 +905,32 @@
     scene(document.querySelector('.work-list'),works,{label:'04 · selected work',per:75,names:works.map(w=>w.querySelector('h3').textContent)});
   })();
 
+  /* project inquiry widget: posts to FormSubmit, which forwards to email */
+  (function(){
+    const root=document.getElementById('inq');if(!root)return;
+    const MAIL='taimoormirza646@gmail.com',ENDPOINT='https://formsubmit.co/ajax/'+MAIL;
+    const fab=document.getElementById('inqFab'),panel=document.getElementById('inqPanel'),tease=document.getElementById('inqTease'),form=document.getElementById('inqForm'),note=document.getElementById('inqNote');
+    const seen=()=>{try{return sessionStorage.getItem('inq-seen')}catch(e){return null}},mark=()=>{try{sessionStorage.setItem('inq-seen','1')}catch(e){}};
+    function open(v){panel.classList.toggle('on',v);fab.setAttribute('aria-expanded',v);tease.classList.remove('on');mark();if(v){const f=form.querySelector('input');if(f)setTimeout(()=>f.focus(),200);}}
+    fab.addEventListener('click',()=>open(!panel.classList.contains('on')));
+    document.getElementById('inqClose').addEventListener('click',()=>open(false));
+    tease.addEventListener('click',e=>{if(e.target.classList.contains('inq-tx')){tease.classList.remove('on');mark();}else open(true);});
+    if(!seen())setTimeout(()=>{if(!panel.classList.contains('on'))tease.classList.add('on');},6000);
+    form.addEventListener('submit',e=>{e.preventDefault();
+      const d=Object.fromEntries(new FormData(form).entries()),btn=form.querySelector('.inq-send');let ok=true;
+      [['name',v=>v.trim().length>1],['email',v=>/^[^@ ]+@[^@ ]+[.][^@ ]+$/.test(v.trim())],['message',v=>v.trim().length>9]].forEach(([n,t])=>{const el=form.elements[n],good=t(el.value);el.classList.toggle('bad',!good);if(!good)ok=false;});
+      if(!ok){note.textContent='Please add your name, a valid email and a short description.';return;}
+      if(d._honey){root.classList.add('sent');return;}
+      note.textContent='';btn.disabled=true;btn.textContent='Sending…';
+      fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body:JSON.stringify({name:d.name,email:d.email,project_type:d.type||'Not specified',message:d.message,_subject:'Portfolio inquiry from '+d.name,_template:'table'})})
+      .then(r=>r.json()).then(j=>{if(j&&String(j.success)==='true')root.classList.add('sent');else throw new Error('rejected');})
+      .catch(()=>{btn.disabled=false;btn.textContent='Send inquiry';
+        const href='mailto:'+MAIL+'?subject='+encodeURIComponent('Project inquiry from '+d.name)+'&body='+encodeURIComponent(d.message+'\n\n'+d.name+' · '+d.email);
+        note.textContent="Couldn't send from here. ";const a=document.createElement('a');a.href=href;a.textContent='Email me instead';note.appendChild(a);});
+    });
+  })();
+
   /* scroll-spy */
   const spyIds=['about','do','experience','work','tech','contact'];
   const lmap={};document.querySelectorAll('nav.links a.lk').forEach(a=>lmap[a.dataset.sec]=a);
@@ -934,9 +1031,9 @@
           const model=gltf.scene;
           const box=new THREE.Box3().setFromObject(model);
           const size=box.getSize(new THREE.Vector3()),center=box.getCenter(new THREE.Vector3());
-          model.position.sub(center);
-          model.scale.setScalar(3.5/size.y);
-          model.position.y-=0.15;
+          model.scale.setScalar(3.3/size.y);model.updateMatrixWorld(true);
+          const b2=new THREE.Box3().setFromObject(model);model.position.sub(b2.getCenter(new THREE.Vector3()));
+          model.position.y+=0.05;
           model.traverse(o=>{if(o.isMesh){o.castShadow=false;o.frustumCulled=false;}});
           rig.add(model);
           mixer=new THREE.AnimationMixer(model);
@@ -954,6 +1051,25 @@
       const wire=new THREE.Mesh(geo,new THREE.MeshBasicMaterial({color:0x4C6FFF,wireframe:true,transparent:true,opacity:.25}));wire.scale.setScalar(1.04);
       rig.add(gem,wire);rig.userData.gem=gem;rig.userData.wire=wire;loaded=true;
     }
+    // orbit rings, floor glow and drifting particles around the character
+    const mk=(c,o)=>new THREE.MeshBasicMaterial({color:c,transparent:true,opacity:o});
+    const ringA=new THREE.Mesh(new THREE.TorusGeometry(2.25,0.012,8,140),mk(0xD4B26A,.8));ringA.rotation.x=Math.PI/2.3;
+    const ringB=new THREE.Mesh(new THREE.TorusGeometry(2.6,0.01,8,140),mk(0x4C6FFF,.8));ringB.rotation.x=Math.PI/1.75;ringB.rotation.y=.5;
+    const satA=new THREE.Mesh(new THREE.SphereGeometry(.07,16,16),mk(0xD4B26A,1));satA.position.x=2.25;ringA.add(satA);
+    const satB=new THREE.Mesh(new THREE.SphereGeometry(.06,16,16),mk(0x8FA6FF,1));satB.position.x=-2.6;ringB.add(satB);
+    const gc=document.createElement('canvas');gc.width=gc.height=256;const gg=gc.getContext('2d'),gr=gg.createRadialGradient(128,128,4,128,128,128);
+    gr.addColorStop(0,'rgba(76,111,255,.75)');gr.addColorStop(.45,'rgba(76,111,255,.22)');gr.addColorStop(1,'rgba(76,111,255,0)');gg.fillStyle=gr;gg.fillRect(0,0,256,256);
+    const floor=new THREE.Mesh(new THREE.CircleGeometry(2.2,48),new THREE.MeshBasicMaterial({map:new THREE.CanvasTexture(gc),transparent:true,depthWrite:false}));floor.rotation.x=-Math.PI/2;floor.position.y=-1.62;
+    const pg=new THREE.BufferGeometry(),pa=new Float32Array(70*3);for(let i=0;i<pa.length;i++)pa[i]=(Math.random()-.5)*(i%3===1?5:7);
+    pg.setAttribute('position',new THREE.BufferAttribute(pa,3));
+    const dust=new THREE.Points(pg,new THREE.PointsMaterial({color:0x8FA6FF,size:.035,transparent:true,opacity:.7}));
+    scene.add(ringA,ringB,floor,dust);
+    const sayEl=document.getElementById('botSay');let sayT=null,sayI=0,clickI=0;
+    const SAY=['pipeline: all green ✓','terraform apply… approved','kubectl get pods → all running','shipping to prod… done','alerts: quiet. just how i like it','infrastructure as code, always'];
+    const CLICK=['Jump','Dance','ThumbsUp','Wave','Punch','Yes'];
+    function speak(t){if(!sayEl)return;sayEl.textContent=t;sayEl.classList.add('on');clearTimeout(sayT);sayT=setTimeout(()=>sayEl.classList.remove('on'),3200);}
+    canvas.addEventListener('click',()=>{emoteTimer=0;if(mixer)play(CLICK[clickI++%CLICK.length],true);speak(SAY[sayI++%SAY.length]);});
+    setTimeout(()=>speak('psst — click me'),2800);
     buildModel();
 
     function resize(){W=canvas.clientWidth;H=canvas.clientHeight;renderer.setSize(W,H,false);cam.aspect=W/H;cam.updateProjectionMatrix();}
@@ -967,6 +1083,7 @@
       if(mixer&&Object.keys(actions).length){emoteTimer+=d;if(emoteTimer>6.5){emoteTimer=0;play(EMOTES[(Math.random()*EMOTES.length)|0],true);}}
       if(rig.userData.gem){rig.userData.gem.rotation.y+=0.004;rig.userData.gem.rotation.x+=0.0016;rig.userData.wire.rotation.copy(rig.userData.gem.rotation);}
       rig.rotation.y+=((pointer.x*0.4)-rig.rotation.y)*0.05;
+      ringA.rotation.z+=0.007;ringB.rotation.z-=0.005;dust.rotation.y+=0.0009;
       renderer.render(scene,cam);
       raf=requestAnimationFrame(frame);
     }
@@ -1028,9 +1145,41 @@
         sp.scale.setScalar(rad*1.2);
         m.add(sp);
       }
+      m.userData.tech=haveIcons?ICON_TECHS[i]:null;
       const s={mesh:m,base:pos.clone(),phase:Math.random()*Math.PI*2,speed:0.5+Math.random()*0.8,amp:0.12+Math.random()*0.2};
       spheres.push(s);group.add(m);
     }
+    const TOOLS={AWS:['AWS','Cloud','My main cloud: EC2, ECS, RDS, S3, IAM and the Code* services for running and shipping production workloads.'],
+      Kubernetes:['Kubernetes','Orchestration',"Container orchestration. I'm a Certified Kubernetes Administrator and use it as the platform layer for services and data workloads."],
+      Docker:['Docker','Containers','Packaging apps into containers so they run the same way in every environment.'],
+      Terraform:['Terraform','Infrastructure as Code','Provisioning cloud resources from version-controlled, reviewable configuration.'],
+      Ansible:['Ansible','Automation','Configuration management across server fleets: setup, patching and repeatable changes.'],
+      Helm:['Helm','Kubernetes packaging','Packaging and versioning Kubernetes deployments as charts for consistent releases.'],
+      Jenkins:['Jenkins','CI/CD','Building and maintaining pipelines that build, test and deploy code automatically.'],
+      GitHubActions:['GitHub Actions','CI/CD','Workflow automation next to the code: checks and deployments triggered on every push.'],
+      GitLab:['GitLab','CI/CD','Source control with built-in pipelines for automated delivery.'],
+      CircleCI:['CircleCI','CI/CD','Hosted CI for fast build-and-test pipelines.'],
+      Git:['Git','Version control','The base of everything: branching, reviews and traceable changes.'],
+      GitHub:['GitHub','Version control','Hosting repositories, pull requests and code review.'],
+      Linux:['Linux','Operating systems','Where I work day to day: administering Ubuntu and Amazon Linux servers and services.'],
+      Nginx:['Nginx','Web servers','Web server and reverse proxy in front of applications.'],
+      Prometheus:['Prometheus','Monitoring','Metrics collection and alert rules for infrastructure and services.'],
+      Grafana:['Grafana','Monitoring','Dashboards that turn metrics into real-time visibility.'],
+      Elasticsearch:['Elasticsearch','Logging','Search and log analytics, the core of the ELK Stack for centralised logging.'],
+      Vault:['HashiCorp Vault','Secrets','Secrets management with scoped policies and controlled access to credentials.'],
+      SonarQube:['SonarQube','Code quality','Code quality and security scanning as a gate in the pipeline.'],
+      Python:['Python','Scripting','Automation, tooling and glue code.'],
+      PostgreSQL:['PostgreSQL','Databases','Relational database I deploy and operate for applications and data pipelines.'],
+      MongoDB:['MongoDB','Databases','Document database I operate and maintain.'],
+      Bitbucket:['Bitbucket','CI/CD','Git hosting with Pipelines for CI/CD.'],
+      GCP:['Google Cloud','Cloud','Google Cloud, including GKE for Kubernetes workloads.']};
+    const meshes=spheres.map(s=>s.mesh),ray=new THREE.Raycaster(),ndc=new THREE.Vector2(),card=document.getElementById('toolCard');let hot=null,sel=null;
+    function pick(e){const r=canvas.getBoundingClientRect();ndc.set(((e.clientX-r.left)/r.width)*2-1,-((e.clientY-r.top)/r.height)*2+1);ray.setFromCamera(ndc,cam);const h=ray.intersectObjects(meshes,false);return h.length?h[0].object:null;}
+    canvas.addEventListener('pointermove',e=>{hot=pick(e);canvas.style.cursor=hot?'pointer':'';});
+    canvas.addEventListener('click',e=>{const m=pick(e),info=m&&TOOLS[m.userData.tech];if(!info||!card){sel=null;if(card)card.classList.remove('on');return;}
+      sel=m;card.querySelector('.tc-cat').textContent=info[1];card.querySelector('h4').textContent=info[0];card.querySelector('p').textContent=info[2];
+      const r=canvas.getBoundingClientRect();card.style.left=Math.max(12,Math.min(r.width-296,e.clientX-r.left+18))+'px';card.style.top=Math.max(70,Math.min(r.height-180,e.clientY-r.top-30))+'px';card.classList.add('on');});
+    if(card)card.querySelector('.tc-x').addEventListener('click',()=>{sel=null;card.classList.remove('on');});
     function resize(){W=canvas.clientWidth;H=canvas.clientHeight;renderer.setSize(W,H,false);cam.aspect=W/H;cam.updateProjectionMatrix();}
     window.addEventListener('resize',resize);
     let raf=null,t=0,running=false;const target={x:0,y:0};
@@ -1038,7 +1187,7 @@
     canvas.addEventListener('pointerleave',()=>{target.x=0;target.y=0;});
     function frame(){
       t+=0.016;
-      spheres.forEach(s=>{s.mesh.position.y=s.base.y+Math.sin(t*s.speed+s.phase)*s.amp;s.mesh.position.x=s.base.x+Math.cos(t*s.speed*0.7+s.phase)*s.amp*0.5;});
+      spheres.forEach(s=>{s.mesh.position.y=s.base.y+Math.sin(t*s.speed+s.phase)*s.amp;s.mesh.position.x=s.base.x+Math.cos(t*s.speed*0.7+s.phase)*s.amp*0.5;const k=(s.mesh===hot||s.mesh===sel)?1.16:1;s.mesh.scale.setScalar(s.mesh.scale.x+(k-s.mesh.scale.x)*0.15);});
       group.rotation.y+=0.0012+((target.x*0.5)-group.rotation.y)*0.04;
       group.rotation.x+=((target.y*0.3)-group.rotation.x)*0.04;
       renderer.render(scene,cam);
