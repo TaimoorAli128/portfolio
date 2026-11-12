@@ -538,6 +538,43 @@
   @media (max-width:899px){.zpin .do-card{width:100%}.zpin .do-grid{height:min(430px,56vh)}.do-card{padding:24px 22px 22px}}
   /* phones: cards move with the scroll */
   .tl:not(.pin) .job,.work-list:not(.pin) .work{transition:border-color .3s,box-shadow .3s !important;will-change:transform,opacity}
+  /* ===== robot speech bubble ===== */
+  .bot-say{left:50%;top:-2%;max-width:240px;white-space:normal;text-align:center;line-height:1.45;border-radius:14px;padding:10px 16px}
+  .bot-say::after{content:"";position:absolute;left:50%;bottom:-6px;width:10px;height:10px;margin-left:-5px;background:var(--surface);border-right:1px solid var(--line-2);border-bottom:1px solid var(--line-2);transform:rotate(45deg)}
+  .chip.c1{top:40%}
+  /* ===== stack arc: larger and sharper ===== */
+  .arc .tech-cats,.arc .tcat{width:min(440px,84vw)}
+  .arc .tech-cats{height:320px}
+  .arc .tcat{min-height:230px;padding:28px 26px;will-change:auto;backface-visibility:hidden}
+  .arc .tcat h4{font-size:.86rem;margin-bottom:20px}
+  .arc .tiles{gap:12px}
+  .arc .ti{width:56px;height:56px;border-radius:14px;font-size:.74rem}
+  .arc .ti i{width:27px;height:27px}
+  .ti.mono{color:var(--gold)}
+  .tc-info .eyebrow{font-size:.8rem}
+  /* ===== services: each card is drawn as a blueprint, then built ===== */
+  .wf{display:none}
+  .zpin .do-card{opacity:0;transform:none;transition:opacity .45s var(--ease),transform .6s var(--ease);--d:0s}
+  .zpin .do-card.r{transition-delay:0s;--d:.22s}
+  .zpin .do-card.cur{opacity:1;animation:dofill .5s var(--ease) calc(var(--d) + .95s) both}
+  .zpin .do-card.past{opacity:0;transform:translateY(-44px);filter:none}
+  @keyframes dofill{from{background-color:transparent;border-color:transparent}to{background-color:var(--surface);border-color:var(--line)}}
+  .zpin .do-card.cur>*:not(.wf){animation:doin .6s var(--ease) calc(var(--d) + 1s) both}
+  @keyframes doin{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .zpin .wf{display:block;position:absolute;inset:0;border:1px dashed #5B9BFF;border-radius:16px;background:rgba(91,155,255,.04);opacity:0;pointer-events:none}
+  .zpin .do-card.cur .wf{animation:wfshow 1.55s linear var(--d) both}
+  @keyframes wfshow{0%{opacity:0;transform:scale(.96)}10%{opacity:1;transform:none}66%{opacity:1}100%{opacity:0}}
+  .wf i{position:absolute;width:8px;height:8px;background:var(--ink);border:1px solid #5B9BFF}
+  .wf .c1{left:-4px;top:-4px}.wf .c2{right:-4px;top:-4px}.wf .c3{left:-4px;bottom:-4px}.wf .c4{right:-4px;bottom:-4px}
+  .wf b{position:absolute;border:1px solid rgba(91,155,255,.75);background:rgba(91,155,255,.10);border-radius:4px;transform-origin:left}
+  .wf .k1{left:30px;top:30px;width:54px;height:54px}.wf .k5{right:30px;top:48px;width:74px;height:16px}
+  .wf .k2{left:30px;top:108px;width:56%;height:28px}.wf .k3{left:30px;right:30px;top:150px;height:66px}
+  .wf .k4{left:30px;bottom:26px;width:230px;height:40px}
+  .zpin .do-card.cur .wf b{animation:wfk .45s var(--ease) both}
+  .zpin .do-card.cur .wf .k1{animation-delay:calc(var(--d) + .12s)}.zpin .do-card.cur .wf .k5{animation-delay:calc(var(--d) + .2s)}
+  .zpin .do-card.cur .wf .k2{animation-delay:calc(var(--d) + .28s)}.zpin .do-card.cur .wf .k3{animation-delay:calc(var(--d) + .38s)}.zpin .do-card.cur .wf .k4{animation-delay:calc(var(--d) + .5s)}
+  @keyframes wfk{from{transform:scaleX(0);opacity:0}to{transform:scaleX(1);opacity:1}}
+  .wf em{position:absolute;left:16px;top:-9px;background:var(--ink);padding:0 8px;font-family:var(--fm);font-style:normal;font-size:.66rem;letter-spacing:.06em;color:#7FB0FF}
   @media (prefers-reduced-motion:reduce){
     *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important}
     .reveal{opacity:1;transform:none}
@@ -742,9 +779,9 @@
 <section class="section" id="work">
   <div class="wrap">
     <div class="s-head reveal">
-      <div class="eyebrow">04 · selected work</div>
-      <h2 class="s-title">My Work</h2>
-      <p class="s-sub">Initiatives I've contributed to as part of the team — cloud migration and CI/CD, observability, security, and SOC 2 compliance.</p>
+      <div class="eyebrow">04 · projects</div>
+      <h2 class="s-title">Selected work</h2>
+      <p class="s-sub">Projects I've worked on with my teams: cloud migration and CI/CD, observability, security, and SOC 2 compliance.</p>
     </div>
     <div class="work-list">
       <article class="work reveal">
@@ -818,15 +855,15 @@
   <div class="wrap">
     <div class="tech-stage">
       <div class="tech-head">
-        <div class="eyebrow">05 · toolkit</div>
-        <h2 class="s-title">My Tech Stack</h2>
+        <div class="eyebrow">05 · tools</div>
+        <h2 class="s-title">Tools I work with</h2>
       </div>
       <canvas id="techCanvas"></canvas>
       <div class="tool-card" id="toolCard"><button class="tc-x" aria-label="Close">×</button><div class="tc-cat"></div><h4></h4><p></p></div>
-      <div class="tech-hint">hover · click a bubble →</div>
+      <div class="tech-hint">Click a bubble to see how I use it</div>
     </div>
 
-    <div class="tc-track"><div class="tc-stage"><div class="tc-info"><span class="eyebrow">stack by category</span><span id="tcCount"></span></div>
+    <div class="tc-track"><div class="tc-stage"><div class="tc-info"><span class="eyebrow">the same tools, by category</span><span id="tcCount"></span></div>
     <div class="tech-cats">
       <div class="tcat reveal">
         <h4>Cloud Platforms</h4>
@@ -1079,7 +1116,7 @@
     scene(document.querySelector('.tl'),jobs,{label:'03 · career',per:70,names:jobs.map(co),
       index:jobs.map(j=>[co(j),(j.querySelector('.j-date')||{}).textContent])});
     const works=[...document.querySelectorAll('.work-list .work')];
-    scene(document.querySelector('.work-list'),works,{label:'04 · selected work',per:75,names:works.map(w=>w.querySelector('h3').textContent)});
+    scene(document.querySelector('.work-list'),works,{label:'04 · projects',per:75,names:works.map(w=>w.querySelector('h3').textContent)});
   })();
 
   /* project inquiry widget: posts to FormSubmit, which forwards to email */
@@ -1092,7 +1129,7 @@
     fab.addEventListener('click',()=>open(!panel.classList.contains('on')));
     document.getElementById('inqClose').addEventListener('click',()=>open(false));
     tease.addEventListener('click',e=>{if(e.target.classList.contains('inq-tx')){tease.classList.remove('on');mark();}else open(true);});
-    if(!seen())setTimeout(()=>{if(!panel.classList.contains('on'))tease.classList.add('on');},6000);
+    if(!seen()){setTimeout(()=>{if(!panel.classList.contains('on'))tease.classList.add('on');},6000);setTimeout(()=>{tease.classList.remove('on');mark();},15000);}
     form.addEventListener('submit',e=>{e.preventDefault();
       const d=Object.fromEntries(new FormData(form).entries()),btn=form.querySelector('.inq-send');let ok=true;
       [['name',v=>v.trim().length>1],['email',v=>/^[^@ ]+@[^@ ]+[.][^@ ]+$/.test(v.trim())],['message',v=>v.trim().length>9]].forEach(([n,t])=>{const el=form.elements[n],good=t(el.value);el.classList.toggle('bad',!good);if(!good)ok=false;});
@@ -1164,7 +1201,7 @@
         el.style.transform='translate3d('+((1-e)*(i%2?46:-46)).toFixed(1)+'px,'+((1-e)*70).toFixed(1)+'px,0) scale('+(0.88+0.12*e).toFixed(3)+') rotate('+((1-e)*(i%2?3:-3)).toFixed(2)+'deg)';});
       if(ct&&!reduce){const r=ct.getBoundingClientRect(),k=Math.max(0,Math.min(1,(vh-r.top)/(vh*0.7)));ct.style.transform='scale('+(0.78+0.22*k).toFixed(3)+')';}
       if(arc){const r=track.getBoundingClientRect(),span=r.height-vh,pr=span>0?Math.max(0,Math.min(1,-r.top/span)):0,c=pr*(tc.length-1);
-        tc.forEach((el,i)=>{const d=i-c,a=Math.abs(d);el.style.transform='translate3d('+(d*((tc[0].offsetWidth||340)+32)).toFixed(1)+'px,'+(d*d*26).toFixed(1)+'px,0) rotate('+(d*5).toFixed(2)+'deg) scale('+(1-Math.min(a,3)*0.05).toFixed(3)+')';
+        tc.forEach((el,i)=>{const d=i-c,a=Math.abs(d);el.style.transform='translate3d('+(d*((tc[0].offsetWidth||440)+44)).toFixed(1)+'px,'+(d*d*26).toFixed(1)+'px,0) rotate('+(d*4).toFixed(2)+'deg) scale('+(1-Math.min(a,3)*0.04).toFixed(3)+')';
           el.style.opacity=Math.max(0,1-Math.max(0,a-2.2)*0.9).toFixed(2);el.style.zIndex=100-Math.round(a*10);el.classList.toggle('mid',a<0.5);if(a<3)el.classList.add('in');});
         if(cnt)cnt.textContent=String(Math.round(c)+1).padStart(2,'0')+' / '+String(tc.length).padStart(2,'0');}
     }
@@ -1197,13 +1234,15 @@
   /* tools shown as small logo tiles; the name appears on hover or tap */
   (function(){
     const MAP={'GitHub Actions':'GitHubActions','GitLab CI':'GitLab','Bitbucket Pipelines':'Bitbucket','HashiCorp Vault':'Vault','Red Hat':'RedHat','VMware vSphere':'VMware','AWS CodePipeline':'','Amazon Linux':''};
+    const MONO={'AWS CodePipeline':'CP','CodeBuild':'CB','CodeDeploy':'CD','CloudFormation':'CFN','Azure':'AZ','Amazon Linux':'AL','AWS Security Hub':'HUB','GuardDuty':'GD','Inspector':'INS','Macie':'MAC','IAM Identity Center':'IDC','IAM Access Analyzer':'AA','AWS Config':'CFG','CloudTrail':'CT','Detective':'DET','Shield':'SHD','Dagster':'DAG'};
     function tile(name){const key=(name in MAP)?MAP[name]:name.replace(/[^A-Za-z0-9]/g,'');let src=ICONS[key];if(!src&&name==='ELK Stack')src=ICONS.Elasticsearch;
       const b=document.createElement('button');b.type='button';b.className='ti';b.dataset.name=name;b.setAttribute('aria-label',name);
       if(src){const i=document.createElement('i');i.style.setProperty('--m','url("'+src+'")');b.appendChild(i);}
-      else{const w=name.replace(/^(AWS|Amazon)\s+/,'').split(/[\s/&-]+/).filter(Boolean);b.textContent=(w.length>1?w.map(x=>x[0]).join(''):w[0].slice(0,3)).slice(0,3).toUpperCase();}
+      else{const w=name.replace(/^(AWS|Amazon)\s+/,'').split(/[\s/&-]+/).filter(Boolean);b.textContent=MONO[name]||(w.length>1?w.map(x=>x[0]).join(''):w[0].slice(0,3)).slice(0,3).toUpperCase();b.classList.add('mono');}
       b.addEventListener('click',e=>{e.stopPropagation();document.querySelectorAll('.ti.tip').forEach(x=>{if(x!==b)x.classList.remove('tip');});b.classList.toggle('tip');});
       return b;}
     document.querySelectorAll('.tcat .tags').forEach(box=>{const names=[...box.querySelectorAll('.tag')].map(t=>t.textContent.trim());box.textContent='';box.classList.add('tiles');names.forEach(n=>box.appendChild(tile(n)));});
+    document.querySelectorAll('.do-card').forEach((c,i)=>{const w=document.createElement('div');w.className='wf';w.setAttribute('aria-hidden','true');w.innerHTML='<i class="c1"></i><i class="c2"></i><i class="c3"></i><i class="c4"></i><b class="k1"></b><b class="k2"></b><b class="k3"></b><b class="k4"></b><b class="k5"></b><em>provisioning service_'+String(i+1).padStart(2,'0')+'</em>';c.appendChild(w);});
     document.querySelectorAll('.do-tools').forEach(box=>{(box.dataset.tools||'').split('|').filter(Boolean).forEach(n=>box.appendChild(tile(n)));});
     document.addEventListener('click',()=>document.querySelectorAll('.ti.tip').forEach(x=>x.classList.remove('tip')));
   })();
